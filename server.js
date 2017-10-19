@@ -6,7 +6,7 @@ var app = express()
 var config = require('./backend/config/appConfig')
 var services = require('./backend/services/createAdmin')
 var authConfig = require('./backend/services/authConfig')
-
+var responseMW = require('./backend/config/responseMiddleware')
 mongoose.connect(config.database,function(err){
 	if(err){
 		console.log(err)
@@ -16,6 +16,7 @@ mongoose.connect(config.database,function(err){
 })
 
 authConfig()
+responseMW(app)
 services.createAdmin()
 
 app.use(bodyParser.urlencoded({extended: true}))

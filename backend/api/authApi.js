@@ -1,6 +1,6 @@
 var express = require('express')
 var router = express.Router()
-var jwt = require('jsonwebtoken')
+var jwt = require("jwt-simple")
 var User = require('../models/User')
 
 router.post('/authenticate', function(req, res, next) {
@@ -15,7 +15,7 @@ router.post('/authenticate', function(req, res, next) {
 			if(user.password.toString() == req.body.password.toString()){
 				delete user.password
 				var payload = {id: user._id}
-				var token = jwt.sign(payload, 'TopSecret')
+				var token = jwt.encode(payload, 'TopSecret')
 				if(user.roles.toString() == 'admin'){
 					res.json({ success: true, token: 'JWT ' + token , username: user.username, isAdmin: true })
 				}else{
