@@ -17,7 +17,8 @@ var UserSchema = new Schema({
 	function: {
 		type: [{ type: String, enum: ['player', 'referee']}]
 	},
-	sport: String
+	sport: String,
+	club: String
 },{ timestamps: true })
 
 module.exports = mongoose.model('User', UserSchema)

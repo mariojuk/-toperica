@@ -16,37 +16,60 @@ router
 			.catch(err => res.error(err))
 	})
 
-	.post('/player', auth.ensure, checkIsAdmin, function(req, res, next){
+	.post('/player', auth.ensure, function(req, res, next){
   		cq.createPlayer(req.body)
   			.then(data => res.ok(data))
 			.catch(err => res.error(err))
 	})
 
-	.post('/game', auth.ensure, checkIsAdmin, function(req, res, next){
-  		cq.createGame(req.body)
+	.post('/team', auth.ensure, function(req, res, next){
+		if(req.body.players.length >1 && req.body.players.length <4){
+			cq.createTeam(req.body)
+  			.then(data => res.ok(data))
+			.catch(err => res.error(err))
+		}else{
+			res.error('Minimum players for One Team is 1 and Maximum players for One Team is 3')
+		}
+  		
+	})
+
+	.post('/competition', auth.ensure, checkIsAdmin, function(req, res, next){
+  		cq.createCompetition(req.body)
   			.then(data => res.ok(data))
 			.catch(err => res.error(err))
 	})
 
-	.post('/game/:id/finalScore', auth.ensure, function(req, res, next){
-  		cq.updateFinalScore(req.params.id, req.body.finalScore)
-  			.then(data => res.ok(data))
-			.catch(err => res.error(err))
-	})
-
-	.get('/game/:id', auth.ensure, function(req, res, next){
-		cq.getGameInfo(req.params.id)
+	.get('/competitionInfo/:id', auth.ensure, function(req, res, next){
+		cq.getCompetitionInfo(req.params.id)
 			.then(data => res.ok(data))
 			.catch(err => res.error(err))
 	})
 
-	.get('/players', auth.ensure, checkIsAdmin, function(req, res, next){
+	.get('/teamInfo/:id', auth.ensure, function(req, res, next){
+		cq.getTeamInfo(req.params.id)
+			.then(data => res.ok(data))
+			.catch(err => res.error(err))
+	})
+
+	.post('/registrationOnCompetition/:competitionId/:teamId', auth.ensure, function(req, res, next){
+		cq.regOnCompetition(req.params.competitionId, req.params.teamId)
+			.then(data => res.ok(data))
+			.catch(err => res.error(err))
+	})
+
+	.post('/teamResults/:teamId/:playerId', auth.ensure, function(req, res, next){
+		cq.setPlayerResults(req.params.teamId, req.params.playerId, req.body.results)
+			.then(data => res.ok(data))
+			.catch(err => res.error(err))
+	})
+
+	.get('/players', auth.ensure, function(req, res, next){
 		cq.getAllPlayers(req.query.sport)
 			.then(data => res.ok(data))
 			.catch(err => res.error(err))
 	})
 
-	.get('/referees', auth.ensure, checkIsAdmin, function(req, res, next){
+	.get('/referees', auth.ensure, function(req, res, next){
 		cq.getAllReferees(req.query.sport)
 			.then(data => res.ok(data))
 			.catch(err => res.error(err))
