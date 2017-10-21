@@ -6,16 +6,16 @@ var User = require('../models/User')
 router.post('/authenticate', function(req, res, next) {
 	User.findOne({
 		username: req.body.username
-	}).select('_id password roles').exec(function(err,user){
+	}).select('_id username password roles').exec(function(err,user){
 		if (err) throw err
 
 		if (!user) {
 			res.status(401).json({ success: false, msg: 'Authentication failed. User not found.' })
 		} else {
 			if(user.password.toString() == req.body.password.toString()){
+				user = user.toObject()
 				delete user.password
-				var payload = {id: user._id}
-				var token = jwt.encode(payload, 'TopSecret')
+				var token = jwt.encode(user, 'TopSecret')
 				if(user.roles.toString() == 'admin'){
 					res.json({ success: true, token: 'JWT ' + token , username: user.username, isAdmin: true })
 				}else{
