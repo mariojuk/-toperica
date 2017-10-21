@@ -44,12 +44,9 @@ var createReferee = function(referee){
 }
 
 var createPlayer = function(player){
-	var username = firstName + secondName
 	var player = new User({
 		firstName: player.firstName,
 		secondName: player.secondName,
-		username: username,
-		password: '12345678',
 		function: 'player',
 		sport: player.sport
 	})

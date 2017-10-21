@@ -1,9 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="SportApp">
 <head>
-	<title>Sport APP</title>
+
+	<base href='/'>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Stoperica</title>
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<link rel="stylesheet" href="vendor/bootstrap.min.css">
+	<link rel="stylesheet" href="vendor/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="vendor/fontAwesome.css">
+	<link rel="stylesheet" href="https://unpkg.com/angular-toastr/dist/angular-toastr.css" />
+	<link rel="stylesheet" type="text/css" href="vendor/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="login/login.css">
+	<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css' type='text/css' media='all'/>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
+	<script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.min.js"></script>
+	<script src="https://unpkg.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-animate.js"></script>
+	<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="app.routes.js"></script>
+	<script type="text/javascript" src="login/loginController.js"></script>
 </head>
 <body>
-
+	<div ng-view></div>
 </body>
 </html>

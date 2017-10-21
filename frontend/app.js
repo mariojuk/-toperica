@@ -1,0 +1,1 @@
+angular.module('SportApp', ['appRoutes', 'loginCtrl'])

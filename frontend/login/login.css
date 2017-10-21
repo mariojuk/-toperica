@@ -1,0 +1,15 @@
+.loginContainer {
+	text-align: center;
+}
+
+.loginContainer h1{
+	font-size: 40px;
+}
+
+.loginContainer p{
+	margin-top: 10px;
+}
+.loginContainer button{
+	margin-top: 10px;
+}
+
