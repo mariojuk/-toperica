@@ -6,7 +6,7 @@ var cq = require('../queries/createQueries')
 var checkIsAdmin = function(req, res, next){
 	var roles = req.user.roles
 	if(roles == 'admin'){next()}
-	else{res.status(400).json({err: 'You dont have permission !!!'})}
+	else{res.status(400).json({err: 'You dont have permission '})}
 }
 
 router

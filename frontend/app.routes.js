@@ -1,12 +1,19 @@
-angular.module('appRoutes', ['ngRoute'])
-.config(function($routeProvider, $locationProvider){
+angular.module('appRoutes', ['ui.router'])
+.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
-	$routeProvider.when('/',{
-		templateUrl: 'login/login.html',
-		controller: 'loginController',
-		css: './login/login.css'
-	})
+	 $urlRouterProvider.otherwise("/")
+	 $locationProvider.html5Mode(true)
 
-    $locationProvider.html5Mode(true)
+  	$stateProvider
+    	.state('login', {
+      		url: "/",
+      		templateUrl: "login/login.html",
+      		controller: "loginController"
+    	})
 
+    	.state('home', {
+      		url: "/create",
+      		templateUrl: "home/home.html",
+      		controller: "homeController"
+    	})
 })

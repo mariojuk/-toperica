@@ -1,1 +1,1 @@
-angular.module('SportApp', ['appRoutes', 'loginCtrl'])
+angular.module('SportApp', ['appRoutes', 'loginCtrl', 'homeCtrl'])

@@ -22,15 +22,16 @@
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
-	<script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="vendor/angular-ui-router.min.js"></script>
 	<script src="https://unpkg.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-animate.js"></script>
 	<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
 	<script type="text/javascript" src="app.js"></script>
 	<script type="text/javascript" src="app.routes.js"></script>
 	<script type="text/javascript" src="login/loginController.js"></script>
+	<script type="text/javascript" src="home/homeController.js"></script>
 </head>
 <body>
-	<div ng-view></div>
+	<div ui-view></div>
 </body>
 </html>

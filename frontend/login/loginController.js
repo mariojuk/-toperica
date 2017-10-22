@@ -1,5 +1,5 @@
 angular.module('loginCtrl', ['ngAnimate', 'toastr'])
-.controller('loginController', ['$scope', '$location', '$http', 'toastr', function ($scope, $location, $http, toastr){
+.controller('loginController', ['$scope', '$location', '$http', 'toastr', '$state', function ($scope, $location, $http, toastr, $state){
 
 	$scope.login = function(model){
 		$http.post('api/login/authenticate', model).then(function(result) {
@@ -9,6 +9,7 @@ angular.module('loginCtrl', ['ngAnimate', 'toastr'])
         	var currentUser = parseJwt(result.data.token)
         	$http.defaults.headers.common.Authorization = authToken
         	toastr.success('You are logged in as ' + currentUser.username)
+            $state.go('home')
         }).catch(function(err){
         	toastr.error(err.data.msg)
         })
