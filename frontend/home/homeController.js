@@ -1,20 +1,18 @@
 angular.module('homeCtrl', ['ngAnimate', 'toastr'])
-.controller('homeController', ['$scope', '$location', '$http', 'toastr', function ($scope, $location, $http, toastr){
+.controller('homeController', ['$scope', '$location', '$http', 'toastr', 'AuthService', function ($scope, $location, $http, toastr, AuthService){
 
-    var authToken = window.localStorage.getItem('sportApp')
-    var currentUser = parseJwt(authToken)
-    $http.defaults.headers.common.Authorization = authToken
+    $scope.user = AuthService.getCurrentUser(window.localStorage.getItem('sportApp'))
     
     $http.get('api/create/referees?sport=Tennis').then(function(result){
-        console.log(result)
     }).catch(function(err){
-        console.log(err)
         toastr.error('You are logged in but ' + err.data.err + ' for get Tennis referees')
     })
 
-    function parseJwt (token) {
-            var base64Url = token.split('.')[1];
-            var base64 = base64Url.replace('-', '+').replace('_', '/');
-            return JSON.parse(window.atob(base64));
+    $scope.get = function(){
+        $http.get('api/create/competitionInfo/59e9f75df76d2c28907a3283').then(function(result){
+            $scope.competition = result.data
+        }).catch(function(err){
+            toastr.error('You are logged in but ' + err.data.err + ' for get Tennis referees')
+        })
     }
 }])
