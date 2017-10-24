@@ -34,7 +34,6 @@ angular.module('SportApp').service('AuthService', ['$http', 'userService', funct
 
 	function getCurrentUser(token){
 		var currentUser = parseJwt(authToken)
-		$http.defaults.headers.common.Authorization = authToken
 		return currentUser
 	}
 
