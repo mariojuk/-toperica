@@ -69,6 +69,12 @@ router
 			.catch(err => res.error(err))
 	})
 
+	.get('/specificPlayers/:playerName', auth.ensure, checkIsAdmin, function(req, res, next){
+		cq.getSpecificPlayers(req.params.playerName)
+			.then(data => res.ok(data))
+			.catch(err => res.error(err))
+	})
+
 	.get('/referees', auth.ensure, checkIsAdmin, function(req, res, next){
 		cq.getAllReferees(req.query.sport)
 			.then(data => res.ok(data))
