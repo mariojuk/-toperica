@@ -1,8 +1,18 @@
-<form ng-show="showm" class="loginForm" ng-submit="login(loginModel)">
+<form ng-show="showm" class="loginForm" ng-submit="creatTeam(team)">
 
 	<p>Ime tima</p>
-	<input class="dux-input" id="name" type ="text"  ng-model="loginModel.name">
+	<input class="dux-input" id="name" type ="text"  ng-model="team.teamName">
 	
 	<button  class="dux-button red round big no-border" type="submit">SAVE</button>
-	
+
+	<p>Ime Igrača</p>
+	<input class="dux-input" type ="text"  ng-model="player.firstName">
+	<button  class="dux-button red round big no-border" type="submit" ng-click="findPlayers(player.firstName)">TRAŽI</button>
+
+	<div ng-repeat="player in allPlayers">
+		{{player.firstName}}
+		{{player.secondName}}
+		<input type="checkbox" name="" class="check" ng-model="selected" ng-checked="exist(player)" ng-click="toggleSelection(player)"/>
+	</div>
+
 </form>

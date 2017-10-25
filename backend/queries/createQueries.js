@@ -33,11 +33,9 @@ var createReferee = function(referee){
 	var referee = new User({
 		firstName: referee.firstName,
 		secondName: referee.secondName,
-		email: referee.email,
 		username: username,
-		password: '12345678',
-		function: 'referee',
-		sport: referee.sport
+		password: referee.password,
+		function: 'referee'
 	})
 
 	return referee.save()
@@ -56,7 +54,7 @@ var createPlayer = function(player){
 var createTeam = function(team){
 	var team = new Team({
 		teamName: team.teamName,
-		players: team.players,
+		players: team.players, //niz id-eva igraca
 		teamOnePlayer: team.players[0],
 		teamTwoPlayer: team.players[1],
 		teamThreePlayer: team.players[2],
@@ -106,6 +104,10 @@ var setPlayerResults = function(teamId, playerId, results){
 	})
 }
 
+var getSpecificPlayers = function(firstName){
+	return User.find({firstName: firstName, function: 'player'}).lean()
+}
+
 module.exports = {
 	createCompetition,
 	createReferee,
@@ -116,5 +118,6 @@ module.exports = {
 	getTeamInfo,
 	getAllReferees,
 	regOnCompetition,
-	setPlayerResults
+	setPlayerResults,
+	getSpecificPlayers
 }

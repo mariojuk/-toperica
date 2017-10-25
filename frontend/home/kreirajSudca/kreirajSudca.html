@@ -1,9 +1,11 @@
-<form ng-show="showm" class="loginForm" ng-submit="login(loginModel)">
+<form ng-show="showm" class="loginForm" ng-submit="createReferee(referee)">
 
 	<p>Ime sudca</p>
-	<input class="dux-input" id="password" type ="password"  ng-model="loginModel.password">
+	<input class="dux-input" type ="text"  ng-model="referee.firstName">
 	<p>Prezime sudca</p>
-	<input class="dux-input" id="username" type ="email"  ng-model="loginModel.email">
+	<input class="dux-input" type ="text"  ng-model="referee.secondName">
+	<p>Unesi Password</p>
+	<input class="dux-input" type ="text"  ng-model="referee.password">
 	<button  class="dux-button red round big no-border" type="submit">SAVE</button>
 	
 </form>
