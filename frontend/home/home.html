@@ -1,2 +1,29 @@
-WELCOME <button type="button" class="btn btn-primary" ng-click="get()">GET REQUEST</button>
-<div ng-if="competition">{{competition}}</div>
+<div class="adminPanelContainer" >
+	
+	<div class="panelMenu">
+		<div class="item"
+			ui-sref-active="active"
+			ui-sref="home.kreirajNatjecatelja">
+			Kreiraj natjecatelja
+		</div>
+		<div class="item"
+			ui-sref-active="active"
+			ui-sref="home.kreirajSudca">
+			Kreiraj sudca
+		</div>
+		<div class="item"
+			ui-sref-active="active"
+			ui-sref="home.kreirajTim">
+			Kreiraj tim
+		</div>
+		<div class="item"
+			ui-sref-active="active"
+			ui-sref="home.prijavaTima">
+			Prijavi tim na natjecanje
+		</div>
+	</div>
+	<div class="panel" ui-view="adminPanel">
+		No panel selected.
+	</div>
+	
+</div>

@@ -47,8 +47,7 @@ var createPlayer = function(player){
 	var player = new User({
 		firstName: player.firstName,
 		secondName: player.secondName,
-		function: 'player',
-		sport: player.sport
+		function: 'player'
 	})
 
 	return player.save()

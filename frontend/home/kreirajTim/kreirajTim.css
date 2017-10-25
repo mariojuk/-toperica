@@ -1,0 +1,11 @@
+.adminFaqContainer .dux-input {
+  color: #496374;
+  border: 1px solid #C0D0D6;
+  margin-top: 200px;
+}
+.adminFaqContainer .question {
+  color: #496374;
+  font-weight: bold;
+  margin-top: 5px;
+  cursor: pointer;
+}
