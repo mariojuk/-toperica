@@ -1,15 +1,56 @@
-.loginContainer {
-	text-align: center;
+.adminPanelContainer {
+  width: 100%;
+  background-color: #F4F7F8;
+  padding: 20px;
 }
+.adminPanelContainer .panelMenu {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+}
+.adminPanelContainer .panelMenu .item {
+  text-transform: uppercase;
+  background-color: #D9E2E6;
+  color: #496374;
+  padding: 10px;
+  margin-left: 2px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-weight: bold;
+}
+.adminPanelContainer .panelMenu .item:hover {
+  cursor: pointer;
+  background-color: #DFE7EA;
 
-.loginContainer h1{
-	font-size: 40px;
 }
-
-.loginContainer p{
-	margin-top: 10px;
+.adminPanelContainer .panelMenu .item.active {
+  background-color: #FFFFFF;
 }
-.loginContainer button{
-	margin-top: 10px;
+@media only screen and (max-width: 767px) {
+  .adminPanelContainer .panelMenu .item {
+    font-size: 12px;
+    padding: 5px;
+  }
 }
-
+.adminPanelContainer .panel {
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  padding: 10px;
+  min-height: 90%;
+}
+.adminPanelContainer .panel .buttons {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #DFE7EA;
+}
+.adminPanelContainer .panel .buttons .dux-button {
+  margin-left: 5px;
+}
