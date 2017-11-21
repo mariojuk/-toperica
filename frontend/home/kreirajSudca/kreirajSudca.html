@@ -1,17 +1,17 @@
 <form ng-show="showm" class="loginForm" ng-submit="createReferee(referee)">
-
-	<p>Ime sudca</p>
+	<p class="refereeFirstName">Unesi Ime sudca</p>
 	<input class="dux-input" type ="text"  ng-model="referee.firstName">
-	<p>Prezime sudca</p>
+	<p class="refereeSecondName"> Prezime sudca</p>
 	<input class="dux-input" type ="text"  ng-model="referee.secondName">
-	<p>Unesi klub sudca</p>
+	<p class="refereeClub">Unesi klub sudca</p>
 	<input class="dux-input" type ="text"  ng-model="referee.club">
-	<p>Unesi Password</p>
+	<p class="refereeClub"> Unesi Password kojeg ce sudac koristiti kod prijave u sustav :D</p>
 	<input class="dux-input" type ="text"  ng-model="referee.password">
-	<button  class="dux-button red round big no-border" type="submit">SAVE</button>
-	
 </form>
+<button type="button" class="btn btn-warning" ng-click="createReferee(referee)">Kreiraj suca :)</button>
+
 <table>
+  <p class="allreadyCreatedReferees"> Do sad kreirani suci </p>
   <tr>
     <th>Redni broj</th>
     <th>Ime sudca</th> 

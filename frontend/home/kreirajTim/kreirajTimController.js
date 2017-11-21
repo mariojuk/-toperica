@@ -16,7 +16,6 @@ $scope.show = false
 	$scope.findReferee=function(referee){
 			$http.get('api/create/referees/' + referee).then(function(response){
 			$scope.allReferee = response.data
-			console.log($scope.allReferee);
 			
 		})
 			$scope.sudci = true
@@ -69,11 +68,8 @@ $scope.show = false
  		$scope.team.players=$scope.selected
  		$scope.team.refereeForThisTeam=$scope.selectedReferee[0]
  	
- 		console.log($scope.team)
  		$http.post('api/create/team',$scope.team).then(function(response){
-			
-			console.log(response.data)
-			
+ 			toastr.success('Uspješno kreiran tim :D')
 		})
  	}
 }])

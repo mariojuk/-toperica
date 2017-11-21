@@ -3,9 +3,14 @@ var User = require('../models/User')
 var Team = require('../models/Team')
 
 var competitionpopulate = [
-	{path: 'reportedTeams', select: 'teamName players refereeForThisTeam',
-    populate: { path: 'players', select: 'firstName secondName' },
-  	populate: { path:'refereeForThisTeam', select: 'firstName secondName'}
+	{	path: 'reportedTeams', select: 'teamName players refereeForThisTeam',
+    	populate: { path: 'players', select: 'firstName secondName' }
+  	}
+]
+
+var competitionpopulateSecond = [
+	{	path: 'reportedTeams', select: 'teamName refereeForThisTeam',
+    	populate: { path: 'refereeForThisTeam', select: 'firstName secondName' }
   	}
 ]
 
@@ -76,6 +81,7 @@ var getAllReferees= function(refereeName){
 var getCompetitionInfo = function(competitionId){
 	return Competition.findById(competitionId)
 		.populate(competitionpopulate)
+		.populate(competitionpopulateSecond)
 		.lean()
 }
 

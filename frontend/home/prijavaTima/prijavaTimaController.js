@@ -53,6 +53,7 @@ angular.module('prTmCtrl', ['ngAnimate', 'toastr'])
  		$scope.competitionId=$scope.selected[0];
  		$http.post("api/create/registrationOnCompetition/" + $scope.competitionId + "/" + $scope.timeId).then (function(response){
 			$scope.registrationOnCompetition=response.data
+      toastr.success('Uspješno prijavljen tim :D')
 		})
  	}
 }])

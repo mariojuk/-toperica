@@ -3,10 +3,26 @@ table, th , td  {
   border-collapse: collapse;
   padding: 5px;
   margin-top: 50px;
+  font-weight: bold;
 }
 table tr:nth-child(odd) {
   background-color: #f1f1f1;
 }
 table tr:nth-child(even) {
   background-color: #ffffff;
+}
+
+.allreadyCreatedPlayer{
+	font-size: 20px;
+	margin-top: 2%;
+	margin-bottom: -40px;
+}
+
+.firstName{
+	font-size: 20px;
+}
+
+.secondName{
+	font-size: 20px;
+	margin-top: 1%;
 }
