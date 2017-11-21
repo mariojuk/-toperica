@@ -1,18 +1,78 @@
-<form ng-show="showm" class="loginForm" ng-submit="creatTeam(team)">
+
+<form ng-show="showm" class="loginForm" >
 
 	<p>Ime tima</p>
 	<input class="dux-input" id="name" type ="text"  ng-model="team.teamName">
-	
-	<button  class="dux-button red round big no-border" type="submit">SAVE</button>
 
 	<p>Ime Igrača</p>
-	<input class="dux-input" type ="text"  ng-model="player.firstName">
-	<button  class="dux-button red round big no-border" type="submit" ng-click="findPlayers(player.firstName)">TRAŽI</button>
+	<input class="dux-input" type ="text"  ng-model="player.firstName" >
+	<button  class="dux-button red round big no-border" type="submit" ng-click="findPlayers(player.firstName)" >TRAŽI</button>
 
-	<div ng-repeat="player in allPlayers">
-		{{player.firstName}}
-		{{player.secondName}}
-		<input type="checkbox" name="" class="check" ng-model="selected" ng-checked="exist(player)" ng-click="toggleSelection(player)"/>
-	</div>
+	<table ng-show="natjecatelji">
+	  <tr>
+	    <th>Redni broj</th>
+	    <th>Ime natjecatelja</th> 
+	    <th>Prezime natjecatelja</th>
+	  </tr>
+	  <tr ng-repeat="player in allPlayers" >
+	    <td>{{ $index + 1 }}</td>
+	    <td>{{ player.firstName }}</td>
+	    <td>{{ player.secondName }}</td>
+	    <td><input type="checkbox" name="" class="check" ng-model="selected" ng-checked="exist(player)" ng-click="toggleSelection(player)"/></td>
+	  </tr>
+	</table>
 
-</form>
+	<p>Ime Sudca</p>
+	<input class="dux-input" type ="text"  ng-model="referee">
+	<button  class="dux-button red round big no-border" type="submit" ng-click="findReferee(referee)">TRAŽI Sudca</button>
+	<table ng-show="sudci">
+	  <tr>
+	    <th>Redni broj</th>
+	    <th>Ime sudca</th> 
+	    <th>Prezime sudca</th>
+	  </tr>
+	  <tr ng-repeat="referee in allReferee" >
+	    <td>{{ $index + 1 }}</td>
+	    <td>{{ referee.firstName }}</td>
+	    <td>{{ referee.secondName }}</td>
+	    <td><input type="checkbox" name="" class="check" ng-model="selected" ng-checked="existReferee(referee)" ng-click="toggleSelectionReferee(referee)"/></td>
+	  </tr>
+	</table>
+
+
+
+</form>	
+
+<button  class="dux-button red round big no-border" ng-click="creatTeam(team.teamName)" >SAVE</button>
+<div ng-show="show" >
+<table>
+  <tr>
+    <th>Ime kluba</th> 
+  </tr>
+  <tr>
+    <td>{{team.teamName}}</td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <th>Redni broj</th>
+    <th>Ime natjecatelja</th> 
+    <th>Prezime natjecatelja</th>
+  </tr>
+  <tr ng-repeat="player in selected1" >
+    <td>{{ $index + 1 }}</td>
+    <td>{{ player.firstName }}</td>
+    <td>{{ player.secondName }}</td>
+  </tr>
+</table>
+<table >
+  <tr>
+    <th>Ime sudca</th> 
+    <th>Prezime sudca</th>
+  </tr>
+  <tr ng-repeat="referee in selectedReferee1" >
+    <td>{{ referee.firstName }}</td>
+    <td>{{ referee.secondName }}</td>
+  </tr>
+</table>
+</div>

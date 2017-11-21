@@ -1,11 +1,23 @@
 angular.module('krNaCtrl', ['ngAnimate', 'toastr'])
-.controller('kreirajNatjecateljaController', ['$scope', '$location', '$http', 'toastr', 'AuthService', function ($scope, $location, $http, toastr, AuthService){
+.controller('kreirajNatjecateljaController', ['$scope', '$location', '$http', 'toastr', 'AuthService','$window', function ($scope, $location, $http, toastr, AuthService,$window){
 	
 	$scope.showme = true
 
 	$scope.createPlayer=function(player){
-		$http.post("api/create/player", player).then (function(response){
+		$http.post("api/create/player", player)
+		.then (function(response){
 			$scope.message=response.data
+			$window.location.reload()
 		})
-	}
+		 .catch(err => toastr.error(err.data))
+
+		$http.get('api/create/players/').then(function(response){
+			$scope.allPlayers = response.data
+		})
+		
+	}	
+
+	$http.get('api/create/players/').then(function(response){
+		$scope.allPlayers = response.data
+	})
 }])

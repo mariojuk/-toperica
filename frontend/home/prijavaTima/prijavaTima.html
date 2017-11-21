@@ -1,16 +1,35 @@
-<form ng-show="show" class="loginForm" ng-submit="login(loginModel)">
+<form ng-show="showme" class="loginForm" >
 
-	<p>Ime tima</p>
-	<input class="dux-input" id="username" type ="text"  ng-model="loginModel.username">
-	<p>Ime prvog igraca</p>
-	<input class="dux-input" id="username" type ="text"  ng-model="loginModel.username">
-	<p>Ime drugog igraca</p>
-	<input class="dux-input" id="username" type ="text"  ng-model="loginModel.username">
-	<p>Ime treceg igraca</p>
-	<input class="dux-input" id="username" type ="text"  ng-model="loginModel.username">
-	<p>Ime sudca tima</p>
-	<input class="dux-input" id="username" type ="text"  ng-model="loginModel.username">
-
-	<button  class="dux-button red round big no-border" type="submit">SAVE</button>
+	<p>Upiši ime tima</p>
+	<input class="dux-input" id="username" type ="text"  ng-model="teamName">
+	<button  class="dux-button red round big no-border" ng-click="findTeam(teamName)">Pretrazi</button>
+	<table ng-show="showMeCompetitions" >
+	  <tr>
+	    <th>Redni broj</th>
+	    <th>Ime kluba</th> 
+	    
+	  </tr>
+	  <tr ng-repeat="team in allTeams" >
+	    <td>{{ $index + 1 }}</td>
+	    <td>{{team.teamName}}<input type="checkbox" name="" class="check" ng-model="selectedTeam" ng-checked="existTeam(team)" ng-click="toggleSelectionTeam(team)"/></td>
+	   
+	  </tr>
+	</table>
+	
+	<table ng-show="showMeCompetitions">
+	  <tr>
+	    <th>Redni broj</th>
+	    <th>Ime Natjecanja</th> 
+	    
+	  </tr>
+	  <tr ng-repeat="competition in allCompetitions" >
+	    <td>{{ $index + 1 }}</td>
+	    <td>{{competition.competitionName}}<input type="checkbox" name="" class="check" ng-model="selectedTeam" ng-checked="existTeam(competition)" ng-click="toggleSelection(competition)"/></td>
+	   <td>{{competition}}</td>
+	  </tr>
+	</table>	
+	
+	
 	
 </form>
+<button  class="dux-button red round big no-border"  ng-click="registerOnCompetition()">SAVE</button>

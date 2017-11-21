@@ -1,0 +1,31 @@
+<form ng-show="showme" class="loginForm" >
+
+	<table >
+	  <tr>
+	    <th>Redni broj</th>
+	    <th>Ime Natjecanja</th> 
+	    
+	  </tr>
+	  <tr ng-repeat="competition in allCompetitions" >
+	    <td>{{ $index + 1 }}</td>
+	    <td>{{competition.competitionName}}<input type="checkbox" name="" class="check" ng-model="selectedTeam" ng-checked="existTeam(competition)" ng-click="toggleSelection(competition)"/></td>
+	   
+	  </tr>
+	</table>	
+	
+</form>
+<button  class="dux-button red round big no-border"  ng-click="generateReferee()">Informacije prijavljenih timova </button>
+
+
+<table >
+	  <tr>
+	    <th>Redni broj</th>
+	    <th>Ime Tima</th> 
+	    
+	  </tr>
+	  <tr ng-repeat="sudci in specificCompetitions" >
+	    <td>{{ $index + 1 }}</td>
+	    <td>{{sudci.teamName}}</td>
+	    <td>{{sudci}}</td>
+	  </tr>
+	</table>

@@ -4,8 +4,24 @@
 	<input class="dux-input" type ="text"  ng-model="referee.firstName">
 	<p>Prezime sudca</p>
 	<input class="dux-input" type ="text"  ng-model="referee.secondName">
+	<p>Unesi klub sudca</p>
+	<input class="dux-input" type ="text"  ng-model="referee.club">
 	<p>Unesi Password</p>
 	<input class="dux-input" type ="text"  ng-model="referee.password">
 	<button  class="dux-button red round big no-border" type="submit">SAVE</button>
 	
 </form>
+<table>
+  <tr>
+    <th>Redni broj</th>
+    <th>Ime sudca</th> 
+    <th>Prezime sudca</th>
+    <th>Klub sudca</th>
+  </tr>
+  <tr ng-repeat="player in getAllReferee" >
+    <td>{{ $index + 1 }}</td>
+    <td>{{ player.firstName }}</td>
+    <td>{{ player.secondName }}</td>
+    <td>{{ player.club }}</td>
+  </tr>
+</table>

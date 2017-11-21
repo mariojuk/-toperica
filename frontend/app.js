@@ -1,1 +1,1 @@
-angular.module('SportApp', ['appRoutes', 'loginCtrl', 'homeCtrl', 'krNaCtrl', 'krSuCtrl', 'krTmCtrl'])
+angular.module('SportApp', ['appRoutes', 'loginCtrl','stopWatchApp','homeCtrl', 'krNaCtrl', 'krSuCtrl', 'krTmCtrl', 'kNCtrl','prTmCtrl','zaNaCtrl'])

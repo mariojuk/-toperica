@@ -5,9 +5,18 @@ angular.module('loginCtrl', ['ngAnimate', 'toastr'])
         AuthService.login(model)
             .then(function(res){
             	var user = AuthService.getCurrentUser(window.localStorage.getItem('sportApp'))
-                toastr.success('You are logged in as ' + user.username)
-                $state.go('home')
+            	
+            	if(user.roles == "admin"){
+            		toastr.success('You are logged in as ' + user.username)
+               		$state.go('home')
+            	}else{
+            		$state.go('sudac')
+            		toastr.success('You are logged in as ' + user.username)
+            	}
+
+               
             })
             .catch(err => toastr.error(err.data.msg))
 	}
+
 }])

@@ -1,12 +1,17 @@
 <div class="loginBodyClass">
 	<div class="loginContainer">
-		<h1>LOGIN BOX</h1>
+		
 		<form class="loginForm">
+			<div class="column">
 			<p>USERNAME</p>
 			<input id="username" type ="text"  ng-model="loginModel.username">
+			</div>
+			<div class="column">
 			<p>PASSWORD</p>
 			<input id="password" type ="password"  ng-model="loginModel.password">
+			</div>
+			<button type="button" class="btn" ng-click="login(loginModel)">LOGIN</button>
 		</form>
-		<button type="button" class="btn btn-primary" ng-click="login(loginModel)">LOGIN</button>
+		
 	</div>
 </div>

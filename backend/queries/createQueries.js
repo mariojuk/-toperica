@@ -3,8 +3,9 @@ var User = require('../models/User')
 var Team = require('../models/Team')
 
 var competitionpopulate = [
-	{path: 'reportedTeams', select: 'teamName players',
-    populate: { path: 'players', select: 'firstName secondName' }
+	{path: 'reportedTeams', select: 'teamName players refereeForThisTeam',
+    populate: { path: 'players', select: 'firstName secondName' },
+  	populate: { path:'refereeForThisTeam', select: 'firstName secondName'}
   	}
 ]
 
@@ -19,10 +20,9 @@ var teampopulate = [
 var createCompetition= function(competition){
 	var competition = new Competition({
 		description: competition.description,
+		competitionName: competition.competitionName,
 		competitionStart: competition.competitionStart,
-		competitionLocation: competition.competitionLocation,
-		sport: competition.sport,
-		weather: competition.weather,
+		competitionLocation: competition.competitionLocation
 	})
 
 	return competition.save()
@@ -35,6 +35,7 @@ var createReferee = function(referee){
 		secondName: referee.secondName,
 		username: username,
 		password: referee.password,
+		club:referee.club,
 		function: 'referee'
 	})
 
@@ -54,11 +55,11 @@ var createPlayer = function(player){
 var createTeam = function(team){
 	var team = new Team({
 		teamName: team.teamName,
-		players: team.players, //niz id-eva igraca
+		players: team.players, 
 		teamOnePlayer: team.players[0],
 		teamTwoPlayer: team.players[1],
 		teamThreePlayer: team.players[2],
-		sport: team.sport,
+		refereeForThisTeam: team.refereeForThisTeam
 	})
 
 	return team.save()
@@ -68,8 +69,8 @@ var getAllPlayers = function(sport){
 	return User.find({sport: sport, function: 'player'}).lean()
 }
 
-var getAllReferees= function(sport){
-	return User.find({sport: sport, function: 'referee'}).lean()
+var getAllReferees= function(refereeName){
+	return User.find({firstName: refereeName, function: 'referee'}).lean()
 }
 
 var getCompetitionInfo = function(competitionId){
@@ -108,6 +109,17 @@ var getSpecificPlayers = function(firstName){
 	return User.find({firstName: firstName, function: 'player'}).lean()
 }
 
+var findTeam=function(teamName){
+	return Team.find({teamName: teamName}).lean()
+}
+
+var findCompetitions=function(){
+	return Competition.find({competitionStart:{$gt:Date.now()}}).lean()
+}
+
+var getAllReferee=function(){
+	return User.find({function:"referee"}).lean()
+}
 module.exports = {
 	createCompetition,
 	createReferee,
@@ -119,5 +131,8 @@ module.exports = {
 	getAllReferees,
 	regOnCompetition,
 	setPlayerResults,
-	getSpecificPlayers
+	getSpecificPlayers,
+	findTeam,
+	findCompetitions,
+	getAllReferee
 }
