@@ -1,13 +1,20 @@
 
 <form ng-show="showm" class="loginForm" >
-
-	<p>Ime tima</p>
+	<p class="teamName">Objašnjenje kako kreirati tim:</p>
+	<ul>
+	  	<li>Upiši ime tima</li>
+	  	<li>Upiši ime po ime igrača i označi ga</li>
+	  	<li>Upiši ime suca i prijavi ga kao dio svog tima</li>
+	  	<li>Prijavljeni sudac tvog tima ne može biti i tvoj sudac na natjecanju :)</li>
+	</ul>
+	<p class="teamName">Ime tima</p>
 	<input class="dux-input" id="name" type ="text"  ng-model="team.teamName">
 
-	<p>Ime Igrača</p>
+	<p class="otherFields">Ime Igrača</p>
 	<input class="dux-input" type ="text"  ng-model="player.firstName" >
-	<button  class="dux-button red round big no-border" type="submit" ng-click="findPlayers(player.firstName)" >TRAŽI</button>
-
+	<div>
+		<button type="button" class="btn btn-success" ng-click="findPlayers(player.firstName)">Traži igrača</button>
+	</div>
 	<table ng-show="natjecatelji">
 	  <tr>
 	    <th>Redni broj</th>
@@ -22,9 +29,11 @@
 	  </tr>
 	</table>
 
-	<p>Ime Sudca</p>
+	<p class="otherFields">Ime Suca</p>
 	<input class="dux-input" type ="text"  ng-model="referee">
-	<button  class="dux-button red round big no-border" type="submit" ng-click="findReferee(referee)">TRAŽI Sudca</button>
+	<div>
+		<button type="button" class="btn btn-success" ng-click="findReferee(referee)">Traži Sudca</button>
+	</div>
 	<table ng-show="sudci">
 	  <tr>
 	    <th>Redni broj</th>
@@ -43,23 +52,17 @@
 
 </form>	
 
-<button  class="dux-button red round big no-border" ng-click="creatTeam(team.teamName)" >SAVE</button>
 <div ng-show="show" >
 <table>
+	<p class="otherFields">Označeni igrači koji ce biti dio tvog tima</p>
   <tr>
-    <th>Ime kluba</th> 
-  </tr>
-  <tr>
-    <td>{{team.teamName}}</td>
-  </tr>
-</table>
-<table>
-  <tr>
+  	<th>Ime kluba</th>
     <th>Redni broj</th>
     <th>Ime natjecatelja</th> 
     <th>Prezime natjecatelja</th>
   </tr>
   <tr ng-repeat="player in selected1" >
+  	<td>{{team.teamName}}</td>
     <td>{{ $index + 1 }}</td>
     <td>{{ player.firstName }}</td>
     <td>{{ player.secondName }}</td>
@@ -75,4 +78,7 @@
     <td>{{ referee.secondName }}</td>
   </tr>
 </table>
+</div>
+<div class="createTeam">
+	<button type="button" class="btn btn-success" ng-click="creatTeam(team.teamName)">Kreiraj Tim</button>
 </div>

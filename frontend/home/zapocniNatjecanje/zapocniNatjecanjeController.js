@@ -2,11 +2,11 @@ angular.module('zaNaCtrl', ['ngAnimate', 'toastr'])
 .controller('zapocniNatjecanjeController', ['$scope', '$location', '$http', 'toastr', 'AuthService', function ($scope, $location, $http, toastr, AuthService){
 	$scope.showme = true
 
-		$http.get("api/create/findCompetitions").then (function(response){
-			$scope.allCompetitions=response.data
-		})
+	$http.get("api/create/findCompetitions").then (function(response){
+		$scope.allCompetitions=response.data
+	})
 
-		$scope.selected=[]
+	$scope.selected=[]
 		
  	$scope.exist=function(item){
   		return $scope.selected.indexOf(item)> -1;
@@ -21,12 +21,12 @@ angular.module('zaNaCtrl', ['ngAnimate', 'toastr'])
    			$scope.selected.push(item._id)
   		}
  	}
-		$scope.generateReferee=function(){
-			$http.get("api/create/competitionInfo/"+ $scope.selected[0] ).then (function(response){
-				$scope.specificCompetitions=response.data.reportedTeams
-				console.log($scope.specificCompetitions.reportedTeams)
-				console.log(response.data)
-			})
-		}
+
+	$scope.generateReferee=function(){
+		$http.get("api/create/competitionInfo/"+ $scope.selected[0] ).then (function(response){
+			$scope.specificCompetitions=response.data.reportedTeams
+			$scope.showInfo = true
+		})
+	}
 
 }])

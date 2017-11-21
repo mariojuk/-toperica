@@ -1,12 +1,14 @@
 <form ng-show="showme" class="loginForm" ng-submit="createPlayer(player)">
-	<p>Ime natjecatelja</p>
+	<p class="firstName">Unesi Ime natjecatelja</p>
 	<input class="dux-input" id="firstName" type ="text"  ng-model="player.firstName">
-	<p>Prezime natjecatelja</p>
+	<p class="secondName">Unesi Prezime natjecatelja</p>
 	<input class="dux-input" id="secondName" type ="text"  ng-model="player.secondName">
-	<button  class="dux-button red round big no-border" type="submit">SAVE</button>
 </form>
 
+<button type="button" class="btn btn-warning" ng-click="createPlayer(player)">Kreiraj igrača :)</button>
+
 <table>
+  <p class="allreadyCreatedPlayer"> Do sad kreirani igrači </p>
   <tr>
     <th>Redni broj</th>
     <th>Ime natjecatelja</th> 

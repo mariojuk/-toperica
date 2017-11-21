@@ -1,0 +1,19 @@
+.allreadyCreatedReferees{
+	font-size: 20px;
+	margin-top: 2%;
+	margin-bottom: -40px;
+}
+
+.refereeFirstName{
+	font-size: 20px;
+}
+
+.refereeSecondName{
+	font-size: 20px;
+	margin-top: 1%;
+}
+
+.refereeClub{
+	font-size: 20px;
+	margin-top: 1%;
+}

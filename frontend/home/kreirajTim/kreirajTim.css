@@ -9,3 +9,17 @@
   margin-top: 5px;
   cursor: pointer;
 }
+
+
+.teamName{
+	font-size: 20px;
+}
+
+.otherFields{
+	font-size: 20px;
+	margin-top: 1%;
+}
+
+.createTeam button{
+	margin-left: 50%;
+}
