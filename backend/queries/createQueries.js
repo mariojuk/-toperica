@@ -10,7 +10,7 @@ var competitionpopulate = [
 
 var competitionpopulateSecond = [
 	{	path: 'reportedTeams', select: 'teamName refereeForThisTeam',
-    	populate: { path: 'refereeForThisTeam', select: 'firstName secondName' }
+    	populate: { path: 'refereeForThisTeam', select: 'firstName secondName club' }
   	}
 ]
 

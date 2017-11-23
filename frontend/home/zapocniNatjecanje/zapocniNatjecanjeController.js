@@ -4,10 +4,11 @@ angular.module('zaNaCtrl', ['ngAnimate', 'toastr'])
 
 	$http.get("api/create/findCompetitions").then (function(response){
 		$scope.allCompetitions=response.data
+		console.log($scope.allCompetitions)
 	})
 
 	$scope.selected=[]
-		
+	
  	$scope.exist=function(item){
   		return $scope.selected.indexOf(item)> -1;
  	}
@@ -29,4 +30,10 @@ angular.module('zaNaCtrl', ['ngAnimate', 'toastr'])
 		})
 	}
 
+	$scope.startCompetition=function(){
+		
+		$http.post("api/create/startCompetition/"+ $scope.selected[0] ).then (function(response){
+			console.log($scope.selected)
+		})
+	}
 }])
