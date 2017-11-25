@@ -2,15 +2,25 @@
   display: flex;
   justify-content: flex-end;
 }
+@media only screen and (max-width: 700px) {
+  .loginContainer  {
+    display: flex;
+    justify-content:center;
+  }
+  .loginForm{
+    display: flex;
+    flex-direction: column;
+  }
+
+}
 .loginContainer .loginForm {
   display: flex;
   justify-content: space-between;
 }
 .loginContainer .loginForm .column {
-  flex-direction: column; 
-   margin-right: 10px;
+  flex-direction: column;
+  margin-right: 10px;
 }
-
 .loginContainer .loginForm .btn {
   padding: 5px 10px;
   font-size: 12px;

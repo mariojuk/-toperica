@@ -14,7 +14,7 @@ angular.module('stopWatchApp', [])
             var secs = parseInt(elapsed / 1000,10);
             
             
-            return hours + ':' + mins + ':' + secs ;
+            return mins + ':' + secs ;
         }
     };
 })
@@ -29,6 +29,7 @@ angular.module('stopWatchApp', [])
             scope.startTimer = stopwatchService.startTimer; 
             scope.stopTimer = stopwatchService.stopTimer;
             scope.resetTimer = stopwatchService.resetTimer;
+            scope.zeroTimer=stopwatchService.zeroTimer;
             
         }
     };
@@ -87,7 +88,7 @@ angular.module('stopWatchApp', [])
           options.elapsedTime.setTime(0);
           timeElapsed = offset = 0;
         };
-
+       
         self.cancelTimer = function(){
           $interval.cancel(interval);
         };

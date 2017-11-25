@@ -4,7 +4,6 @@ angular.module('zaNaCtrl', ['ngAnimate', 'toastr'])
 
 	$http.get("api/create/findCompetitions").then (function(response){
 		$scope.allCompetitions=response.data
-		console.log($scope.allCompetitions)
 	})
 
 	$scope.selected=[]
@@ -26,14 +25,16 @@ angular.module('zaNaCtrl', ['ngAnimate', 'toastr'])
 	$scope.generateReferee=function(){
 		$http.get("api/create/competitionInfo/"+ $scope.selected[0] ).then (function(response){
 			$scope.specificCompetitions=response.data.reportedTeams
+			console.log($scope.specificCompetitions)
 			$scope.showInfo = true
 		})
 	}
 
 	$scope.startCompetition=function(){
-		
+		$scope.showInfo1 = true
+
 		$http.post("api/create/startCompetition/"+ $scope.selected[0] ).then (function(response){
-			console.log($scope.selected)
+			
 		})
 	}
 }])
