@@ -69,7 +69,7 @@ $scope.show = false
  		$scope.team.refereeForThisTeam=$scope.selectedReferee[0]
  	
  		$http.post('api/create/team',$scope.team).then(function(response){
- 			toastr.success('Uspješno kreiran tim :D')
+ 			toastr.success('Uspješno kreiran tim')
 		})
  	}
 }])

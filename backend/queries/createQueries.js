@@ -4,13 +4,13 @@ var Team = require('../models/Team')
 
 var competitionpopulate = [
 	{	path: 'reportedTeams', select: 'teamName players refereeForThisTeam',
-    	populate: { path: 'players', select: 'firstName secondName' }
+    	populate: { path: 'players', select: 'firstName secondName club' }
   	}
 ]
 
 var competitionpopulateSecond = [
 	{	path: 'reportedTeams', select: 'teamName refereeForThisTeam',
-    	populate: { path: 'refereeForThisTeam', select: 'firstName secondName' }
+    	populate: { path: 'refereeForThisTeam', select: 'firstName secondName club' }
   	}
 ]
 

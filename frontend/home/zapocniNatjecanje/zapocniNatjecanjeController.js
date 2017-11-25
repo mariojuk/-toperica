@@ -7,7 +7,7 @@ angular.module('zaNaCtrl', ['ngAnimate', 'toastr'])
 	})
 
 	$scope.selected=[]
-		
+	
  	$scope.exist=function(item){
   		return $scope.selected.indexOf(item)> -1;
  	}
@@ -25,8 +25,16 @@ angular.module('zaNaCtrl', ['ngAnimate', 'toastr'])
 	$scope.generateReferee=function(){
 		$http.get("api/create/competitionInfo/"+ $scope.selected[0] ).then (function(response){
 			$scope.specificCompetitions=response.data.reportedTeams
+			console.log($scope.specificCompetitions)
 			$scope.showInfo = true
 		})
 	}
 
+	$scope.startCompetition=function(){
+		$scope.showInfo1 = true
+
+		$http.post("api/create/startCompetition/"+ $scope.selected[0] ).then (function(response){
+			
+		})
+	}
 }])

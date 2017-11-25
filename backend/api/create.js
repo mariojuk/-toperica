@@ -116,4 +116,23 @@ router
 			.catch(err => res.error(err))
 	})
 
+	.post('/startCompetition/:competitionId', auth.ensure, checkIsAdmin, function(req, res, next){
+		var allReferees = []
+
+		cq.getCompetitionInfo(req.params.competitionId)
+			.then(function(data){
+				data.reportedTeams.forEach(function(team){
+					allReferees.push(team.refereeForThisTeam)
+				})
+				console.log(allReferees)
+
+				allReferees.forEach(function(referee){
+
+					console.log(referee)
+				})
+				res.ok(allReferees)
+			})
+			.catch(err => res.error(err))
+	})
+
 module.exports = router
