@@ -120,12 +120,16 @@ var findTeam=function(teamName){
 }
 
 var findCompetitions=function(){
-	return Competition.find({competitionStart:{$gt:Date.now()}}).lean()
+	return Competition.find({$and:[
+		{competitionStart:{$gt:Date.now()}},
+		{isStarted: false}
+	]}).lean()
 }
 
 var getAllReferee=function(){
 	return User.find({function:"referee"}).lean()
 }
+
 module.exports = {
 	createCompetition,
 	createReferee,

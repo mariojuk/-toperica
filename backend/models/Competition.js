@@ -6,8 +6,8 @@ var competitionSchema = new Schema({
 	description: String,
 	competitionName:String,
 	competitionStart: Date,
-	competitionLocation: String
-
+	competitionLocation: String,
+	isStarted:{type: Boolean, default:false}
 },{ timestamps: true })
 
 module.exports = mongoose.model('Competition', competitionSchema)

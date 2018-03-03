@@ -4,7 +4,6 @@
 	  <tr>
 	    <th>Redni broj</th>
 	    <th>Ime Natjecanja</th> 
-	    
 	  </tr>
 	  <tr ng-repeat="competition in allCompetitions" >
 	    <td>{{ $index + 1 }}</td>
@@ -29,43 +28,44 @@
 	<tr ng-repeat="sudci in specificCompetitions" >
 		<td>{{ $index + 1 }}</td>
 	    <td>{{sudci.teamName}}</td>
-	    <td>{{sudci.refereeForThisTeam.firstName}} {{sudci.refereeForThisTeam.secondName}}</td>
-	    <td>{{sudci.players[0].firstName}} {{sudci.players[0].secondName}}</td>
-	    <td>{{sudci.players[1].firstName}} {{sudci.players[1].secondName}}</td>
-	    <td>{{sudci.players[2].firstName}} {{sudci.players[2].secondName}}</td>
+	    <td>{{sudci.refereeForThisTeam.firstName}} {{sudci.refereeForThisTeam.secondName}}
+	    </td>
+	    <td>{{sudci.players[0].firstName}} {{sudci.players[0].secondName}} </td>
+	    <td>{{sudci.players[1].firstName}} {{sudci.players[1].secondName}} </td>
+	    <td>{{sudci.players[2].firstName}} {{sudci.players[2].secondName}} </td>
 	</tr>
 </table>
 
 <button ng-show="showInfo" type="button" class="btn btn-warning" ng-click="startCompetition()">Generiraj suce i započni natjecanje</button>
 
-<table ng-show="showInfo1">
-	<tr>
-		<th>Redni broj prijavljene ekipe</th>
-		<th>Ime Tima</th> 
-		<th>Ime Prijavljenog suca ove ekipe</th>
-	</tr>
-	<tr ng-repeat="sudci in specificCompetitions" >
-		<td>{{ $index + 1 }}</td>
-	    <td>{{sudci.teamName}}</td>
-	    <td>{{sudci.refereeForThisTeam.firstName}} {{sudci.refereeForThisTeam.secondName}}<input type="checkbox" name="" class="check" ng-model="selectedTeam" ng-checked="existTeam(competition)" ng-click="toggleSelection(competition)"/></td>
-	    
-	    
-	</tr>
-</table>
 
 
-<table ng-show="showInfo1">
+
+<table ng-show="showInfo1" ng-click="generatePlayerInfo()">
   <tr>
     <th>Redni broj</th>
-    <th>Ime sudca</th> 
-    <th>Prezime sudca</th>
+    <th>Ime i prezime sudca</th> 
     <th>Klub sudca</th>
+    <th>Tim sudca</th>
   </tr>
   <tr ng-repeat="sudci in specificCompetitions" >
     <td>{{ $index + 1 }}</td>
-    <td>{{ sudci.refereeForThisTeam.firstName }}</td>
-    <td>{{ sudci.refereeForThisTeam.secondName }}</td>
-    <td>{{ sudci.refereeForThisTeam.club }}<input type="checkbox" name="" class="check" ng-model="selectedTeam" ng-checked="existTeam(competition)" ng-click="toggleSelection(competition)"/></td>
-     
+    <td>{{ sudci.refereeForThisTeam.firstName }} {{ sudci.refereeForThisTeam.secondName }}
+	    <input type="checkbox" ng-model='selectedTeam' ng-value='sudci.refereeForThisTeam._id' name="Referee" ng-click="togglePlayersAndReferee(sudci.refereeForThisTeam._id,sudci.refereeForThisTeam.club)"></td>
+    <td>{{ sudci.refereeForThisTeam.club }}</td>
+    <td>{{ sudci.teamName }}</td>
   </tr>
 </table>
+
+<table ng-show="showInfo3">
+	<tr>
+		<th>Redni broj prijavljene ekipe</th>
+		<th>Ime Prvog Igraca</th>
+		
+	</tr>
+	<tr ng-repeat="player in allOtherPlayers" >
+		<td>{{ $index + 1 }}</td>
+	    <td>{{player.firstName}} {{player.secondName}}<input type="checkbox" ng-model='selectedPlayer' ng-value='player._id' name="player" ng-click="toggleAll(player._id)"></td> 
+	</tr>
+</table>
+<button ng-click="dodjeli_sve()">dodjeli natjecatelje sudcu</button>

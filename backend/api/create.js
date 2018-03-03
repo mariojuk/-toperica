@@ -124,15 +124,22 @@ router
 				data.reportedTeams.forEach(function(team){
 					allReferees.push(team.refereeForThisTeam)
 				})
-				console.log(allReferees)
 
 				allReferees.forEach(function(referee){
 
-					console.log(referee)
 				})
 				res.ok(allReferees)
 			})
 			.catch(err => res.error(err))
 	})
 
+	.post('/createCompetitionPlayers', auth.ensure, checkIsAdmin, function(req, res, next){
+		cq.getCompetitionInfo({players:[],competitionId:" ",refereeId:" "})
+	})
+
+	.get('/allPlayerForCompetition/:competitionId/:club', auth.ensure, checkIsAdmin, function(req, res, next){
+		cq.getCompetitionInfo(req.params.competitionId).then(function(competition){
+			console.log(competition)
+		})
+	})
 module.exports = router
