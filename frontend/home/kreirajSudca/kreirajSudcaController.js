@@ -1,4 +1,4 @@
-angular.module('krSuCtrl', ['ngAnimate', 'toastr'])
+angular.module('SportApp')
 .controller('kreirajSudcaController', ['$scope', '$location', '$http', 'toastr', 'AuthService','$window', function ($scope, $location, $http, toastr, AuthService,$window){
 	
 	$scope.showm = true

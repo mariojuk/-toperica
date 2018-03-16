@@ -1,4 +1,4 @@
-angular.module('krTmCtrl', ['ngAnimate', 'toastr'])
+angular.module('SportApp')
 .controller('kreirajTimController', ['$scope', '$location', '$http', 'toastr', 'AuthService', function ($scope, $location, $http, toastr, AuthService){
 
 	$scope.showm = true

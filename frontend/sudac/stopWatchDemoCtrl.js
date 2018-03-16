@@ -1,4 +1,4 @@
-angular.module('stopWatchApp', [])
+angular.module('SportApp')
 .controller('stopWatchDemoCtrl', ['$scope', function($scope){
     $scope.stopwatches = [{ log: []}];
 }])

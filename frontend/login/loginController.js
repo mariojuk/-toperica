@@ -1,4 +1,4 @@
-angular.module('loginCtrl', ['ngAnimate', 'toastr'])
+angular.module('SportApp')
 .controller('loginController', ['$scope', '$location', '$http', 'toastr', '$state', 'AuthService', function ($scope, $location, $http, toastr, $state, AuthService){
 
 	$scope.login = function(model){
