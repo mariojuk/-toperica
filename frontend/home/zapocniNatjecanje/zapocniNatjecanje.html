@@ -68,4 +68,5 @@
 	    <td>{{player.firstName}} {{player.secondName}}<input type="checkbox" ng-model='selectedPlayer' ng-value='player._id' name="player" ng-click="toggleAll(player._id)"></td> 
 	</tr>
 </table>
-<button ng-click="dodjeli_sve()">dodjeli natjecatelje sudcu</button>
+<button ng-show="showInfo3" type="button" class="btn btn-warning" ng-click="dodjeli_sve()">Dodjeli natjecatelje sudcu</button>
+<button ng-show="showInfo3" type="button" class="btn btn-warning" ng-click="zapocni_natjecanje()">Započni natjecanje</button>

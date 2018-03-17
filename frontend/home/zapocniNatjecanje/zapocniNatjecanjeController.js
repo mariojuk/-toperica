@@ -1,5 +1,5 @@
 angular.module('SportApp')
-.controller('zapocniNatjecanjeController', ['$scope', '$location', '$http', 'toastr', 'AuthService', function ($scope, $location, $http, toastr, AuthService){
+.controller('zapocniNatjecanjeController', ['$scope', '$location', '$http', 'toastr', 'AuthService', '$window', function ($scope, $location, $http, toastr, AuthService, $window){
 	$scope.showme = true
 
 	$http.get("api/create/findCompetitions").then (function(response){
@@ -124,4 +124,13 @@ angular.module('SportApp')
     })
     $scope.allOtherPlayers=[]
   }
+
+  $scope.zapocni_natjecanje = function(){
+  		var body = {}
+  		body.competitionId = $scope.selected[0]
+  		$http.post('api/startCompetition/', body).then(function(response){
+  			$window.location.reload()
+  		})
+  }
+
 }])

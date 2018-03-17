@@ -1,19 +1,27 @@
 <div ng-app="stopWatchApp" ng-controller="stopWatchDemoCtrl">
     
-    <div ng-repeat="options in stopwatches">
-        <div bb-stopwatch options="options">
-            <div class="container">
-              <div class="stopWatch numbers">
-                {{options.elapsedTime | stopwatchTime}}
-               </div>
-              <button class="btn" ng-click="startTimer()">Start</button>
-              <button class="btn" ng-click="stopTimer()">Stop</button>
-              <button class="btn" ng-click="resetTimer()">Reset</button>
-               <button class="btn" ng-click="zeroTimer()">Nula</button>
-            </div>
-        </div>
-        <div class="log" ng-repeat="log in options.log">
-            {{log/1000}} seconds
-        </div>
-    </div>
- </div>
+    <table >
+    <tr>
+      <th>Redni broj</th>
+      <th>Ime i Prezime Natjecatelja</th>
+      <th>Klub</th>
+      <th>Prvi Rezultat</th>
+      <th>Drugi Rezultat</th>
+      <th>Treći Rezultat</th>
+    </tr>
+    <tr ng-repeat="p in players" >
+      <td>{{ $index + 1 }}</td>
+      <td>{{p.player.firstName}} {{p.player.secondName}}<input type="checkbox" name="" class="check" ng-model="selectedPlayer" ng-checked="exist(p.player)" ng-click="toggleSelection(p.player)"/></td>
+      <td>{{p.player.club}}</td>
+      <td>{{p.track1.result}} <input type="radio" ng-model="option.name" value="{{p.track1.result}}"></td>
+      <td>{{p.track2.result}} <input type="radio" ng-model="option.name" value="{{p.track2.result}}"></td>
+      <td>{{p.track3.result}} <input type="radio" ng-model="option.name" value="{{p.track3.result}}"></td>
+    </tr>
+  </table> 
+
+  <select ng-model="selectedCategory" ng-options="c for c in categories"></select> 
+
+    <p ng-bind="counter"></p>
+    <button ng-disabled="!counterStarted" ng-click="stop(selectedCategory, option.name)">Stop</button>
+    <button ng-disabled="counterStarted" ng-click="countdown()">Start</button>
+    <button ng-disabled="!counterStarted" ng-click="setToNull()">Nula</button>

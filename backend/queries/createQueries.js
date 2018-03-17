@@ -130,6 +130,10 @@ var getAllReferee=function(){
 	return User.find({function:"referee"}).lean()
 }
 
+var updatePlayer = function(playerId, club){
+	return User.findByIdAndUpdate(playerId, {$set : { club : club }},{new:true}).exec()
+}
+
 module.exports = {
 	createCompetition,
 	createReferee,
@@ -144,5 +148,6 @@ module.exports = {
 	getSpecificPlayers,
 	findTeam,
 	findCompetitions,
-	getAllReferee
+	getAllReferee,
+	updatePlayer
 }
