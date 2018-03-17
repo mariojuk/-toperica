@@ -3,6 +3,7 @@ var router = express.Router()
 var _=require('lodash')
 var auth = require('../services/authServices')
 var cq = require('../queries/createQueries')
+var async = require('async')
 
 var checkIsAdmin = function(req, res, next){
 	var roles = req.user.roles
@@ -34,14 +35,29 @@ router
 	})
 
 	.post('/team', auth.ensure, checkIsAdmin, function(req, res, next){
-		if(req.body.players.length >0 && req.body.players.length <4){
-			cq.createTeam(req.body)
-  			.then(data => res.ok(data))
-			.catch(err => res.error(err))
-		}else{
-			res.error('Minimum players for One Team is 1 and Maximum players for One Team is 3')
-		}
-  		
+		async.parallel({
+			clubUpdate: function(callback) {
+				var club = req.body.teamName
+				req.body.players.forEach(player=>{
+					cq.updatePlayer(player, club)
+				})
+				callback(null, req.body.players)
+			},
+			createTeam: function(callback) {
+				if(req.body.players.length >0 && req.body.players.length <4){
+					cq.createTeam(req.body)
+		  			.then(data => callback(null, data))
+					.catch(callback)
+				}else{
+					callback('Minimum players for One Team is 1 and Maximum players for One Team is 3')
+				}
+			}
+		}, function(err, data){
+			if(err){ res.error(err) }
+			else{ 
+				res.ok(data) 
+			}
+		})
 	})
 
 	.post('/competition', auth.ensure, checkIsAdmin, function(req, res, next){

@@ -11,10 +11,16 @@ var checkIsAdmin = function(req, res, next){
 }
 
 router
+	.post('', auth.ensure, checkIsAdmin, function(req, res, next){
+		startCompetitonQueries.startNewCompetiton(req.body.competitionId)
+			.then(data=>res.ok(data))
+	})
+
 	.post('/givePlayersReferees', auth.ensure, checkIsAdmin, function(req, res, next){
   		req.body.players.forEach(player=>{
   			startCompetitonQueries.givePlayersReferees(player, req.body.referee, req.body.competitionId)
   		})
   		res.ok()
 	})
+
 module.exports = router
