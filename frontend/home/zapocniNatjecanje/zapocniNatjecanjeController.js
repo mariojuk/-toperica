@@ -1,4 +1,4 @@
-angular.module('zaNaCtrl', ['ngAnimate', 'toastr'])
+angular.module('SportApp')
 .controller('zapocniNatjecanjeController', ['$scope', '$location', '$http', 'toastr', 'AuthService', function ($scope, $location, $http, toastr, AuthService){
 	$scope.showme = true
 

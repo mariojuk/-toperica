@@ -1,4 +1,4 @@
-angular.module('krNaCtrl', ['ngAnimate', 'toastr'])
+angular.module('SportApp')
 .controller('kreirajNatjecateljaController', ['$scope', '$location', '$http', 'toastr', 'AuthService','$window', function ($scope, $location, $http, toastr, AuthService,$window){
 	
 	$scope.showme = true

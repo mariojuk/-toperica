@@ -1,4 +1,4 @@
-angular.module('prTmCtrl', ['ngAnimate', 'toastr'])
+angular.module('SportApp')
 .controller('prijavaTimaController', ['$scope', '$location', '$http', 'toastr', 'AuthService', function ($scope, $location, $http, toastr, AuthService){
 	
 	$scope.showme = true

@@ -1,4 +1,4 @@
-angular.module('homeCtrl', ['ngAnimate', 'toastr'])
+angular.module('SportApp')
 .controller('homeController', ['$scope', '$location', '$http', 'toastr', 'AuthService', function ($scope, $location, $http, toastr, AuthService){
 
     $scope.user = AuthService.getCurrentUser(window.localStorage.getItem('sportApp'))
