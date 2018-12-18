@@ -11,6 +11,5 @@ angular.module('SportApp')
 	}
 	$http.get('api/create/referees').then(function(response){
 		$scope.getAllReferee = response.data
-		console.log($scope.getAllReferee)
 	})
 }])

@@ -1,4 +1,4 @@
-<form ng-show="showme" class="createPlayerForm" ng-submit="createPlayer(player)">
+<form ng-show="showme" class="formContainer" ng-submit="createPlayer(player)">
 	<p>Unesi Ime natjecatelja:</p>
 	<input class="stopWatch-input" id="firstName" type ="text"  ng-model="player.firstName">
 	<p>Unesi Prezime natjecatelja:</p>
@@ -6,7 +6,7 @@
   <button type="button" class="stopWatch-btn" ng-click="createPlayer(player)">Kreiraj igrača</button>
 </form>
 
-<div class="createPlayerContainer">
+<div class="tableContainer">
   <p> Svi kreirani igraci: </p>
   <table>
     <tr>

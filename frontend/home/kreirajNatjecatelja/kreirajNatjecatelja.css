@@ -12,14 +12,15 @@ table tr:nth-child(even) {
 }
 p{
   font-size: 18px;
+  margin: 5px 0;
 }
 @media screen and (max-width: 600px){
   p{
   font-size: 14px;
 }
 }
-.createPlayerForm,
-.createPlayerContainer{
+.formContainer,
+.tableContainer{
     width: 60%;
     margin: 20px auto;
     display: flex;

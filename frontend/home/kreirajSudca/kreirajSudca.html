@@ -1,27 +1,30 @@
-<form ng-show="showm" class="loginForm" ng-submit="createReferee(referee)">
-	<p class="refereeFirstName">Unesi Ime sudca</p>
-	<input class="dux-input" type ="text"  ng-model="referee.firstName">
-	<p class="refereeSecondName"> Prezime sudca</p>
-	<input class="dux-input" type ="text"  ng-model="referee.secondName">
-	<p class="refereeClub">Unesi klub sudca</p>
-	<input class="dux-input" type ="text"  ng-model="referee.club">
-	<p class="refereeClub"> Unesi Password kojeg ce sudac koristiti kod prijave u sustav :D</p>
-	<input class="dux-input" type ="text"  ng-model="referee.password">
-</form>
-<button type="button" class="btn btn-warning" ng-click="createReferee(referee)">Kreiraj suca :)</button>
 
-<table>
-  <p class="allreadyCreatedReferees"> Do sad kreirani suci </p>
-  <tr>
-    <th>Redni broj</th>
-    <th>Ime sudca</th> 
-    <th>Prezime sudca</th>
-    <th>Klub sudca</th>
-  </tr>
-  <tr ng-repeat="player in getAllReferee" >
-    <td>{{ $index + 1 }}</td>
-    <td>{{ player.firstName }}</td>
-    <td>{{ player.secondName }}</td>
-    <td>{{ player.club }}</td>
-  </tr>
-</table>
+<form ng-show="showm" class="formContainer" ng-submit="createReferee(referee)">
+	<p>Unesi Ime sudca:</p>
+	<input class="stopWatch-input" type ="text"  ng-model="referee.firstName">
+	<p> Prezime sudca:</p>
+	<input class="stopWatch-input" type ="text"  ng-model="referee.secondName">
+	<p>Unesi klub sudca:</p>
+	<input class="stopWatch-input" type ="text"  ng-model="referee.club">
+	<p> Unesi Password kojeg ce sudac <br>koristiti kod prijave u sustav:</p>
+	<input class="stopWatch-input" type ="text"  ng-model="referee.password">
+  <button type="button" class="stopWatch-btn" ng-click="createReferee(referee)">Kreiraj suca :)</button>
+</form>
+
+<div class="tableContainer">
+  <p> Do sad kreirani suci </p>
+  <table>
+    <tr>
+      <th>Redni broj</th>
+      <th>Ime sudca</th> 
+      <th>Prezime sudca</th>
+      <th>Klub sudca</th>
+    </tr>
+    <tr ng-repeat="player in getAllReferee" >
+      <td>{{ $index + 1 }}</td>
+      <td>{{ player.firstName }}</td>
+      <td>{{ player.secondName }}</td>
+      <td>{{ player.club }}</td>
+    </tr>
+  </table>
+</div>

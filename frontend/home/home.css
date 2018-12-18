@@ -22,13 +22,12 @@
   background-color: #496374;
   color: white;
 }
-
 .adminNav .icon {
   display: none;
 }
 
 @media screen and (max-width: 600px) {
-  .adminNav a:not(:first-child) {display: none;}
+  .adminNav a{display: none;}
   .adminNav a.icon {
     float: right;
     display: block;
