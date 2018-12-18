@@ -1,39 +1,35 @@
-<div class="adminPanelContainer" >
+<div class="adminPanelContainer">
 	
-	<div class="panelMenu">
-		<div class="item"
+	<div class="adminNav" id="myAdminNav">
+	  	<a class="item active"
 			ui-sref-active="active"
 			ui-sref="home.kreirajNatjecatelja">
-			Kreiraj natjecatelja
-		</div>
-		<div class="item"
+				Kreiraj natjecatelja</a>
+	    <a class="item"
 			ui-sref-active="active"
 			ui-sref="home.kreirajSudca">
-			Kreiraj sudca
-		</div>
-		<div class="item"
+				Kreiraj sudca</a>
+	    <a class="item"
 			ui-sref-active="active"
 			ui-sref="home.kreirajTim">
-			Kreiraj tim
-		</div>
-		<div class="item"
+				Kreiraj tim</a>
+	  	<a class="item"
 			ui-sref-active="active"
 			ui-sref="home.kreirajNatjecanje">
-			Kreiraj natjecanje
-		</div>
-		<div class="item"
+				Kreiraj natjecanje</a>
+	  	<a class="item"
 			ui-sref-active="active"
 			ui-sref="home.prijavaTima">
-			Prijavi tim na natjecanje
-		</div>
-		<div class="item"
+				Prijavi tim na natjecanje</a>
+	  	<a class="item"
 			ui-sref-active="active"
 			ui-sref="home.zapocniNatjecanje">
-			Zapocmi natjecanje
-		</div>
+				Zapocmi natjecanje</a>
+	  	<a class="icon" ng-click="myFunction()">
+	    	<i class="fa fa-bars"></i>
+	  	</a>
 	</div>
 	<div class="panel" ui-view="adminPanel">
 		No panel selected.
 	</div>
-	
 </div>

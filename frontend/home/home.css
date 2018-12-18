@@ -1,56 +1,50 @@
-.adminPanelContainer {
-  width: 100%;
-  background-color: #F4F7F8;
-  padding: 20px;
+.adminNav {
+  overflow: hidden;
+  background-color: #c0d0d6;
 }
-.adminPanelContainer .panelMenu {
-  width: 100%;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: start;
-  justify-content: flex-start;
-}
-.adminPanelContainer .panelMenu .item {
-  text-transform: uppercase;
-  background-color: #D9E2E6;
-  color: #496374;
-  padding: 10px;
-  margin-left: 2px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  font-weight: bold;
-}
-.adminPanelContainer .panelMenu .item:hover {
-  cursor: pointer;
-  background-color: #DFE7EA;
 
+.adminNav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
-.adminPanelContainer .panelMenu .item.active {
-  background-color: #FFFFFF;
+
+.adminNav a:hover {
+  background-color: #d9e2e6;
+  color: black;
 }
-@media only screen and (max-width: 767px) {
-  .adminPanelContainer .panelMenu .item {
-    font-size: 12px;
-    padding: 5px;
+
+.active {
+  background-color: #496374;
+  color: white;
+}
+
+.adminNav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .adminNav a:not(:first-child) {display: none;}
+  .adminNav a.icon {
+    float: right;
+    display: block;
   }
 }
-.adminPanelContainer .panel {
-  border-radius: 5px;
-  background-color: #FFFFFF;
-  padding: 10px;
-  min-height: 90%;
-}
-.adminPanelContainer .panel .buttons {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
-  -webkit-box-pack: end;
-          justify-content: flex-end;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #DFE7EA;
-}
-.adminPanelContainer .panel .buttons .dux-button {
-  margin-left: 5px;
+
+@media screen and (max-width: 600px) {
+  .adminNav.responsive {position: relative;}
+  .adminNav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .adminNav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 }
