@@ -2,7 +2,6 @@ table, th , td  {
   border: 1px solid grey;
   border-collapse: collapse;
   padding: 5px;
-  margin-top: 50px;
   font-weight: bold;
 }
 table tr:nth-child(odd) {
@@ -11,18 +10,39 @@ table tr:nth-child(odd) {
 table tr:nth-child(even) {
   background-color: #ffffff;
 }
-
-.allreadyCreatedPlayer{
-	font-size: 20px;
-	margin-top: 2%;
-	margin-bottom: -40px;
+p{
+  font-size: 18px;
+}
+@media screen and (max-width: 600px){
+  p{
+  font-size: 14px;
+}
+}
+.createPlayerForm,
+.createPlayerContainer{
+    width: 60%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.firstName{
-	font-size: 20px;
+.stopWatch-btn{
+  width: 120px;
+  background-color: #68888e;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px auto;
+  cursor: pointer;
+  border-radius: 14px;
 }
-
-.secondName{
-	font-size: 20px;
-	margin-top: 1%;
+.stopWatch-input{
+  width: 240px;
+  border-radius: 6px;
+  border: solid 1px #68888e;
 }

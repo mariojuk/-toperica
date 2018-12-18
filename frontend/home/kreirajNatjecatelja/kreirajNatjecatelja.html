@@ -1,26 +1,26 @@
-<form ng-show="showme" class="loginForm" ng-submit="createPlayer(player)">
-	<p class="firstName">Unesi Ime natjecatelja</p>
-	<input class="dux-input" id="firstName" type ="text"  ng-model="player.firstName">
-	<p class="secondName">Unesi Prezime natjecatelja</p>
-	<input class="dux-input" id="secondName" type ="text"  ng-model="player.secondName">
+<form ng-show="showme" class="createPlayerForm" ng-submit="createPlayer(player)">
+	<p>Unesi Ime natjecatelja:</p>
+	<input class="stopWatch-input" id="firstName" type ="text"  ng-model="player.firstName">
+	<p>Unesi Prezime natjecatelja:</p>
+	<input class="stopWatch-input" id="secondName" type ="text"  ng-model="player.secondName">
+  <button type="button" class="stopWatch-btn" ng-click="createPlayer(player)">Kreiraj igrača</button>
 </form>
 
-<button type="button" class="btn btn-warning" ng-click="createPlayer(player)">Kreiraj igrača :)</button>
-
-<table>
-  <p class="allreadyCreatedPlayer"> Do sad kreirani igrači </p>
-  <tr>
-    <th>Redni broj</th>
-    <th>Ime natjecatelja</th> 
-    <th>Prezime natjecatelja</th>
-  </tr>
-  <tr ng-repeat="player in allPlayers" >
-    <td>{{ $index + 1 }}</td>
-    <td>{{ player.firstName }}</td>
-    <td>{{ player.secondName }}</td>
-  </tr>
-</table>
-		
+<div class="createPlayerContainer">
+  <p> Svi kreirani igraci: </p>
+  <table>
+    <tr>
+      <th>Redni broj</th>
+      <th>Ime natjecatelja</th> 
+      <th>Prezime natjecatelja</th>
+    </tr>
+    <tr ng-repeat="player in allPlayers" >
+      <td>{{ $index + 1 }}</td>
+      <td>{{ player.firstName }}</td>
+      <td>{{ player.secondName }}</td>
+    </tr>
+  </table>
+</div>
 		
 
 	
