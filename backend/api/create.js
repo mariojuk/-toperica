@@ -13,9 +13,17 @@ var checkIsAdmin = function(req, res, next){
 
 router
 	.post('/referee', auth.ensure, checkIsAdmin, function(req, res, next){
-  		cq.createReferee(req.body)
-  			.then(data => res.ok(data))
-			.catch(err => res.error(err))
+		if(!_.isEmpty(req.body)){
+			if(req.body.firstName != undefined && req.body.secondName != undefined && req.body.club != undefined && req.body.password != undefined){
+				cq.createReferee(req.body)
+	  			.then(data => res.ok(data))
+				.catch(err => res.error(err))
+			}else{
+				res.error('input firstName, secondName, club or password')
+			}
+		}else{
+			res.error('input firstName secondName, club and password')
+		}
 	})
 
 	.post('/player', auth.ensure, checkIsAdmin, function(req, res, next){
