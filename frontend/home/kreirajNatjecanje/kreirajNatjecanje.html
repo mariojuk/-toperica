@@ -1,32 +1,33 @@
-<form ng-show="showme" class="loginForm" ng-submit="createCompetition(competition)">
+<form ng-show="showme" class="formContainer" ng-submit="createCompetition(competition)">
 	<p>Lokacija natjecanja</p>
-	<input class="dux-input" type ="text"  ng-model="competition.competitionLocation">
+	<input class="stopWatch-input" type ="text"  ng-model="competition.competitionLocation">
 	<p>Naziv natjecanja</p>
-	<input class="dux-input"  type ="text"  ng-model="competition.competitionName">
+	<input class="stopWatch-input"  type ="text"  ng-model="competition.competitionName">
 	<p>Početak natjecanja</p>
-	<input class="dux-input" type="date" ng-model="competition.competitionStart">
+	<input class="stopWatch-input" type="date" ng-model="competition.competitionStart">
 	<p>Opis natjecanja</p>
-	<input class="dux-input" type="text"   ng-model="competition.description">
-
-	<button  class="dux-button red round big no-border" type="submit">SAVE</button>
-	
-	
+	<input class="stopWatch-input" type="text"   ng-model="competition.description">
+  <p>Ime glavnog sudca/sudtkinje</p>
+  <input class="stopWatch-input" type="text"   ng-model="competition.chiefReferee">
+	<button  class="stopWatch-btn" type="submit">SAVE</button>
 </form>
-
-<table>
-  <tr>
-    <th>Redni broj</th>
-    <th>Ime natjecanja</th> 
-    <th>Početak natjecanja</th> 
-    <th>Lokacija natjecanja</th>
-    <th>Opis natjecanja</th>
-  </tr>
-  <tr ng-repeat="player in findCompetitions" >
-    <td>{{ $index + 1 }}</td>
-    <td>{{ player.competitionName }}</td>
-    <td>{{ player.competitionStart }}</td>
-    <td>{{ player.competitionLocation }}</td>
-    <td>{{ player.description }}</td>
-  </tr>
-</table>
-
+<div class="bigTableContainer">
+  <table>
+    <tr>
+      <th>Redni broj</th>
+      <th>Ime natjecanja</th> 
+      <th>Početak natjecanja</th> 
+      <th>Lokacija natjecanja</th>
+      <th>Opis natjecanja</th>
+      <th>Glavni sudac/sutkinja</th>
+    </tr>
+    <tr ng-repeat="player in findCompetitions" >
+      <td>{{ $index + 1 }}</td>
+      <td>{{ player.competitionName }}</td>
+      <td>{{ player.competitionStart }}</td>
+      <td>{{ player.competitionLocation }}</td>
+      <td>{{ player.description }}</td>
+      <td>{{ player.chiefReferee }}</td>
+    </tr>
+  </table>
+</div>

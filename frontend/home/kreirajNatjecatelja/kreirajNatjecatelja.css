@@ -4,6 +4,7 @@ table, th , td  {
   padding: 5px;
   font-weight: bold;
 }
+
 table tr:nth-child(odd) {
   background-color: #f1f1f1;
 }
@@ -17,11 +18,17 @@ p{
 @media screen and (max-width: 600px){
   p{
   font-size: 14px;
-}
+  }
+  .bigTableContainer{
+    overflow-x: auto;
+    width: 96% !important;
+    display: block !important;
+  }
 }
 .formContainer,
-.tableContainer{
-    width: 60%;
+.tableContainer,
+.bigTableContainer{
+    width: 80%;
     margin: 20px auto;
     display: flex;
     flex-direction: column;

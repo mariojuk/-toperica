@@ -7,6 +7,7 @@ var competitionSchema = new Schema({
 	competitionName:String,
 	competitionStart: Date,
 	competitionLocation: String,
+	chiefReferee: String,
 	isStarted:{type: Boolean, default:false}
 },{ timestamps: true })
 

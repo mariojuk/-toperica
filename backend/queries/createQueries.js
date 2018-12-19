@@ -27,7 +27,8 @@ var createCompetition= function(competition){
 		description: competition.description,
 		competitionName: competition.competitionName,
 		competitionStart: competition.competitionStart,
-		competitionLocation: competition.competitionLocation
+		competitionLocation: competition.competitionLocation,
+		chiefReferee: competition.chiefReferee
 	})
 
 	return competition.save()
