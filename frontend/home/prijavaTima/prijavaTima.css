@@ -1,0 +1,11 @@
+.registrationTeam{
+	display: flex;
+}
+.allList{
+	width: 150px;
+	display: flex;
+	justify-content: space-between;
+}
+.allList .check{
+	margin: 5px 10px !important;
+}

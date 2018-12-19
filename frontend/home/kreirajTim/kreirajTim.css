@@ -1,3 +1,8 @@
 .createTeam{
   display: flex;
 }
+
+.check{
+	display: flex;
+	margin: 0 auto !important;
+}
