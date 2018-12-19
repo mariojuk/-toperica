@@ -8,6 +8,7 @@ angular.module('SportApp')
 			$scope.message=response.data
 			$window.location.reload()
 		})
+		.catch(err => toastr.error(err.data))
 	}
 	$http.get('api/create/referees').then(function(response){
 		$scope.getAllReferee = response.data

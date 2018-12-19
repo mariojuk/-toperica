@@ -1,25 +1,27 @@
 
-<form ng-show="showm" class="loginForm" >
-	<p class="teamName">Objašnjenje kako kreirati tim:</p>
+<form ng-show="showm" class="formContainer">
+	<p>Objašnjenje kako kreirati tim:</p>
 	<ul>
 	  	<li>Upiši ime tima</li>
 	  	<li>Upiši ime po ime igrača i označi ga</li>
 	  	<li>Upiši ime suca i prijavi ga kao dio svog tima</li>
-	  	<li>Prijavljeni sudac tvog tima ne može biti i tvoj sudac na natjecanju :)</li>
+	  	<li>Prijavljeni sudac tvog tima ne može biti i tvoj sudac na natjecanju</li>
 	</ul>
-	<p class="teamName">Ime tima</p>
-	<input class="dux-input" id="name" type ="text"  ng-model="team.teamName">
+	<p>Ime tima</p>
+	<input class="stopWatch-input" id="name" type ="text"  ng-model="team.teamName">
 
-	<p class="otherFields">Ime Igrača</p>
-	<input class="dux-input" type ="text"  ng-model="player.firstName" >
+	<p class="otherFields">Ime Igrača:</p>
+	<input class="stopWatch-input" type ="text"  ng-model="player.firstName" >
 	<div>
-		<button type="button" class="btn btn-success" ng-click="findPlayers(player.firstName)">Traži igrača</button>
+		<button type="button" class="stopWatch-btn" ng-click="findPlayers(player.firstName)">Traži igrača</button>
 	</div>
+	<div class="tableContainer">
 	<table ng-show="natjecatelji">
 	  <tr>
 	    <th>Redni broj</th>
 	    <th>Ime natjecatelja</th> 
 	    <th>Prezime natjecatelja</th>
+	    <th>Odaberite natjecatelja</th>
 	  </tr>
 	  <tr ng-repeat="player in allPlayers" >
 	    <td>{{ $index + 1 }}</td>
@@ -28,17 +30,19 @@
 	    <td><input type="checkbox" name="" class="check" ng-model="selected" ng-checked="exist(player)" ng-click="toggleSelection(player)"/></td>
 	  </tr>
 	</table>
-
-	<p class="otherFields">Ime Suca</p>
-	<input class="dux-input" type ="text"  ng-model="referee">
-	<div>
-		<button type="button" class="btn btn-success" ng-click="findReferee(referee)">Traži Sudca</button>
 	</div>
+	<p class="otherFields">Ime Suca:</p>
+	<input class="stopWatch-input" type ="text"  ng-model="referee">
+	<div>
+		<button type="button" class="stopWatch-btn" ng-click="findReferee(referee)">Traži Sudca</button>
+	</div>
+	<div class="tableContainer">
 	<table ng-show="sudci">
 	  <tr>
 	    <th>Redni broj</th>
 	    <th>Ime sudca</th> 
 	    <th>Prezime sudca</th>
+	    <th>Odaberi sudca</th>
 	  </tr>
 	  <tr ng-repeat="referee in allReferee" >
 	    <td>{{ $index + 1 }}</td>
@@ -47,14 +51,15 @@
 	    <td><input type="checkbox" name="" class="check" ng-model="selected" ng-checked="existReferee(referee)" ng-click="toggleSelectionReferee(referee)"/></td>
 	  </tr>
 	</table>
-
+</div>
 
 
 </form>	
 
 <div ng-show="show" >
+<div class="tableContainer">
 <table>
-	<p class="otherFields">Označeni igrači koji ce biti dio tvog tima</p>
+	<p class="otherFields">Označeni igrači i sudac koji ce biti dio tvog tima</p>
   <tr>
   	<th>Ime kluba</th>
     <th>Redni broj</th>
@@ -68,6 +73,8 @@
     <td>{{ player.secondName }}</td>
   </tr>
 </table>
+</div>
+<div class="tableContainer">
 <table >
   <tr>
     <th>Ime sudca</th> 
@@ -79,6 +86,7 @@
   </tr>
 </table>
 </div>
-<div class="createTeam">
-	<button type="button" class="btn btn-success" ng-click="creatTeam(team.teamName)">Kreiraj Tim</button>
+</div>
+<div class="createTeam" ng-show="create">
+	<button type="button" class="stopWatch-btn" ng-click="creatTeam(team.teamName)">Kreiraj Tim</button>
 </div>

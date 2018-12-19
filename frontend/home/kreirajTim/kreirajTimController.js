@@ -3,6 +3,7 @@ angular.module('SportApp')
 
 	$scope.showm = true
 $scope.show = false
+
 	$scope.findPlayers = function(playerName){
 		$http.get('api/create/specificPlayers/' + playerName).then(function(response){
 			$scope.allPlayers = response.data
@@ -35,12 +36,14 @@ $scope.show = false
   		if(idx > -1){
    			$scope.selected.splice(idx,1);
    			$scope.selected1.splice(idx,1);
+        check.team()
   		}
   		else{
    			$scope.selected.push(item._id)
-   				$scope.selected1.push(item)
+   			$scope.selected1.push(item)
+         check.team()
   		}
-  		 console.log($scope.selected);
+
  	}
  	$scope.existReferee=function(item){
   		return $scope.selectedReferee.indexOf(item)> -1;
@@ -49,18 +52,28 @@ $scope.show = false
 
  	$scope.toggleSelectionReferee=function(item){
   		var idx=$scope.selectedReferee.indexOf(item._id)
+
   		var idx=$scope.selectedReferee1.indexOf(item)
   		if(idx > -1){
    			$scope.selectedReferee.splice(idx,1);
    			$scope.selectedReferee1.splice(idx,1);
+        check.team()
   		}
   		else{
    			$scope.selectedReferee.push(item._id)
    			$scope.selectedReferee1.push(item)
+        check.team()
   		}
-  		 console.log($scope.selectedReferee1);
  	}
 
+    var check = this;
+    check.team=function(){
+    if($scope.selected1.length == "0" || $scope.selectedReferee1.length == "0"){
+          $scope.create= false
+       }else{
+        $scope.create= true
+      }
+    }
 
  	$scope.creatTeam=function(teamName){
  		$scope.team={}
