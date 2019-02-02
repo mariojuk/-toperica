@@ -104,7 +104,6 @@ router
 	})
 
 	.post('/registrationOnCompetition/:competitionId/:teamId', auth.ensure, checkIsAdmin, function(req, res, next){
-		console.log(req.params.competitionId, req.params.teamId)
 		cq.regOnCompetition(req.params.competitionId, req.params.teamId)
 			.then(data => res.ok(data))
 			.catch(err => res.error(err))

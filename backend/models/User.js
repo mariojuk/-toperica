@@ -18,7 +18,8 @@ var UserSchema = new Schema({
 		type: [{ type: String, enum: ['player', 'referee']}]
 	},
 	sport: String,
-	club: String
+	club: String,
+	isDeleted: {type: Boolean, default:false},
 },{ timestamps: true })
 
 module.exports = mongoose.model('User', UserSchema)

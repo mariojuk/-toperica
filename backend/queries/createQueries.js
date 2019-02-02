@@ -72,7 +72,7 @@ var createTeam = function(team){
 }
 
 var getAllPlayers = function(sport){
-	return User.find({sport: sport, function: 'player'}).lean()
+	return User.find({sport: sport, function: 'player', isDeleted:false}).lean()
 }
 
 var getAllReferees= function(refereeName){
@@ -113,7 +113,7 @@ var setPlayerResults = function(teamId, playerId, results){
 }
 
 var getSpecificPlayers = function(firstName){
-	return User.find({firstName: firstName, function: 'player'}).lean()
+	return User.find({firstName: firstName, function: 'player', isDeleted:false}).lean()
 }
 
 var findTeam=function(teamName){
