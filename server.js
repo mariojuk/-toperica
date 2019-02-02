@@ -28,6 +28,7 @@ app.use(express.static(__dirname + '/frontend'))
 app.use('/api/login', require('./backend/api/authApi'))
 app.use('/api/create', require('./backend/api/create'))
 app.use('/api/referee', require('./backend/api/referee'))
+app.use('/api/players', require('./backend/api/players'))
 app.use('/api/startCompetition', require('./backend/api/start-competition'))
 
 app.use(function(req, res, next) {

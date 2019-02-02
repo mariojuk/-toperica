@@ -20,4 +20,10 @@ angular.module('SportApp')
 	$http.get('api/create/players/').then(function(response){
 		$scope.allPlayers = response.data
 	})
+
+	$scope.deletePlayer=function(playerId){
+		$http.delete('api/players/' + playerId).then((response)=>{
+			$scope.allPlayers = response.data
+		})
+	}
 }])

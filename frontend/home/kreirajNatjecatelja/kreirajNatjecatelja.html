@@ -18,6 +18,7 @@
       <td>{{ $index + 1 }}</td>
       <td>{{ player.firstName }}</td>
       <td>{{ player.secondName }}</td>
+      <td><i class="fa fa-trash" aria-hidden="true" ng-confirm-click="Jeste li sigurni da želite obrisati natjecatelja?" confirmed-click="deletePlayer(player._id)" style="cursor: pointer;"></i></td>
     </tr>
   </table>
 </div>

@@ -23,10 +23,7 @@ router
 	.post('/write-result', auth.ensure, function(req, res, next){
 		refereeQueries.writeResult(req.body)
 			.then(data=>res.ok(data))
-			.catch(err => {
-				console.log(err)
-				res.error(err)
-			})
+			.catch(err => res.error(err))
 	})
 
 module.exports = router
