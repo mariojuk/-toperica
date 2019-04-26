@@ -30,6 +30,7 @@ app.use('/api/create', require('./backend/api/create'))
 app.use('/api/referee', require('./backend/api/referee'))
 app.use('/api/players', require('./backend/api/players'))
 app.use('/api/startCompetition', require('./backend/api/start-competition'))
+app.use('/api/competition-results', require('./backend/api/competition-results'))
 
 app.use(function(req, res, next) {
 	res.setHeader('Access-Control-Allow-Methods', 'POST, PUT, OPTIONS, DELETE, GET')

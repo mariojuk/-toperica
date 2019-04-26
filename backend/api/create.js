@@ -76,7 +76,11 @@ router
 
 	.get('/competitionInfo/:id', auth.ensure, function(req, res, next){
 		cq.getCompetitionInfo(req.params.id)
-			.then(data => res.ok(data))
+			.then(data =>{
+				console.log(data)
+				res.ok(data)
+				
+			})
 			.catch(err => res.error(err))
 	})
 
