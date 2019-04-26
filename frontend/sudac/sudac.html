@@ -1,6 +1,5 @@
 <div ng-app="stopWatchApp" ng-controller="stopWatchDemoCtrl" class="stopWatchContainer">
-    <select ng-init="selectedCategory = categories[0]"  ng-model="selectedCategory" ng-options="c for c in categories"></select> 
-
+    <select ng-init="selectedCategory = categories[0]"  ng-model="selectedCategory" ng-options="c for c in categories" ng-change="checkCategoryAndGenerateTable(selectedCategory)"></select> 
     <table >
     <tr>
       <th>Redni broj</th>
@@ -14,9 +13,9 @@
       <td>{{ $index + 1 }}</td>
       <td><div class="tableField"><p>{{p.player.firstName}} {{p.player.secondName}}</p><input type="checkbox" name="" class="check" ng-model="selectedPlayer" ng-checked="exist(p.player)" ng-click="toggleSelection(p.player)"/></div></td>
       <td><p>{{p.player.club}}</p></td>
-      <td><div class="tableField"><p>{{p.track1.result}} </p></div></td>
-      <td><div class="tableField"><p>{{p.track2.result}}</p> </div></td>
-      <td><div class="tableField"><p>{{p.track3.result}} </p></div></td>
+      <td><div class="tableField"><p>{{ selektiranPadobran ? p.parachute1.result : p.track1.result }}</p></div></td>
+      <td><div class="tableField"><p>{{ selektiranPadobran ? p.parachute2.result : p.track2.result }}</p> </div></td>
+      <td><div class="tableField"><p>{{ selektiranPadobran ? p.parachute3.result : p.track3.result }}</p></div></td>
     </tr>
   </table> 
 
@@ -27,6 +26,6 @@
   <div class="buttonContainer">
     <button ng-disabled="!counterStarted" ng-click="stop(selectedCategory, option.name)">Stop</button>
     <button ng-disabled="counterStarted" ng-click="countdown()">Start</button>
-    <button ng-disabled="!counterStarted" ng-click="setToNull()">Nula</button>
+    <button ng-disabled="!counterStarted" ng-click="setToNull(selectedCategory, option.name)">Nula</button>
   </div>
 </div>

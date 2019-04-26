@@ -10,6 +10,14 @@ angular.module('SportApp')
         $scope.players = response.data
     })
 
+    $scope.checkCategoryAndGenerateTable = function(selectedCategory) {
+        if(selectedCategory == 'padobran'){
+            $scope.selektiranPadobran = true;
+        }else{
+            $scope.selektiranPadobran = false;
+        }
+    }
+
     $scope.selectedPlayer=[]
     
     $scope.exist=function(item){
@@ -56,11 +64,22 @@ angular.module('SportApp')
         $timeout.cancel(stopped)
     } 
 
-    $scope.setToNull = function(){
-        $timeout.cancel(stopped)
-        $scope.counter = 0;
-        $scope.selectedPlayer=[]
+    $scope.setToNull = function(selectedCategory, option){
+        var object={}
+        object.selectedCategory = selectedCategory
+        object.player = $scope.selectedPlayer[0]
+        object.competitionId = $scope.players[0].competitionId
+        object.result = 0
         $scope.counterStarted = false 
+        $scope.counter = 0
+        $http.post('api/referee/write-result', object).then(function(response){
+            $http.get('api/referee/myPlayersForCompetition').then(function(response){
+                $scope.players = response.data
+                $scope.selectedPlayer=[]
+            })
+        }).catch(err => toastr.error(err.data))
+
+        $timeout.cancel(stopped)
     } 
 
 }])

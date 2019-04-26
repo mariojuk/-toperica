@@ -17,8 +17,8 @@ var startNewCompetiton = function(competitionId){
 }
 
 var getMeIsStartedCompetitions = function(){
-	var twoDaysAgo = moment().subtract(2,'d').format('YYYY-MM-DD')
-	return Competition.find({isStarted: true, competitionStart: {$gt: twoDaysAgo}}).lean()
+	var oneDaysAgo = moment().subtract(1,'d').format('YYYY-MM-DD')
+	return Competition.find({isStarted: true, competitionStart: {$gt: oneDaysAgo}}).lean()
 }
 
 module.exports={

@@ -12,6 +12,25 @@
 			</div>
 			<button type="button" class="btn" ng-click="login(loginModel)">LOGIN</button>
 		</form>
-		
+	
 	</div>
 </div>
+
+<table>
+	<tr>
+	  <th>Ime natjecanja</th> 
+	  <th>Ime glavnog sudca</th>
+	  <th>Lokacija</th>
+	  <th>Datum početka natjecanja</th>
+	</tr>
+	<tr ng-repeat="natjecanje in todayComepetitions" >
+	  <td>{{ natjecanje.competitionName }}</td>
+	  <td>{{ natjecanje.chiefReferee }}</td>
+	  <td>{{ natjecanje.competitionLocation }}</td>
+	  <td>{{ natjecanje.competitionStart }}</td>
+	</tr>
+</table>
+
+<br>
+
+<div ng-bind-html="htmlReponse"></div>

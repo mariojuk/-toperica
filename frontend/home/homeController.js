@@ -1,5 +1,5 @@
 angular.module('SportApp')
-.controller('homeController', ['$scope', '$location', '$http', 'toastr', 'AuthService', function ($scope, $location, $http, toastr, AuthService){
+.controller('homeController', ['$scope', '$location', '$http', 'toastr', 'AuthService', '$state', function ($scope, $location, $http, toastr, AuthService, $state){
 
     $scope.user = AuthService.getCurrentUser(window.localStorage.getItem('sportApp')) //?
     $scope.myFunction = function(){
@@ -10,4 +10,9 @@ angular.module('SportApp')
 		    x.className = "adminNav";
 		  }
 	}
+
+		$scope.odjava = function(){
+				AuthService.logout()
+				$state.go('login')
+		}
 }])

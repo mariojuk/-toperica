@@ -1,6 +1,7 @@
 var Competition = require('../models/Competition')
 var User = require('../models/User')
 var Team = require('../models/Team')
+var moment = require('moment')
 
 var competitionpopulate = [
 	{	path: 'reportedTeams', select: 'teamName players refereeForThisTeam',
@@ -23,10 +24,11 @@ var teampopulate = [
 ]
 
 var createCompetition= function(competition){
+	var competitionStart = moment(competition.competitionStart).add('days', 1)
 	var competition = new Competition({
 		description: competition.description,
 		competitionName: competition.competitionName,
-		competitionStart: competition.competitionStart,
+		competitionStart: competitionStart,
 		competitionLocation: competition.competitionLocation,
 		chiefReferee: competition.chiefReferee
 	})

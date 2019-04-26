@@ -1,4 +1,4 @@
-angular.module('SportApp').service('AuthService', ['$http', 'userService', function($http, userService) {
+angular.module('SportApp').service('AuthService', ['$http','$state', 'userService', function($http, $state, userService) {
 	var LOCAL_TOKEN_KEY = 'sportApp'
 	var isAuthenticated = false
 	var authToken
@@ -8,6 +8,9 @@ angular.module('SportApp').service('AuthService', ['$http', 'userService', funct
 		if (token) {
 			useCredentials(token)
 		}   
+		else{
+			$state.go('login')
+		}
 	}
 
 	function storeUserCredentials(token) {
@@ -38,9 +41,13 @@ angular.module('SportApp').service('AuthService', ['$http', 'userService', funct
 	}
 
 	function parseJwt (token) {
-		var base64Url = token.split('.')[1]
-		var base64 = base64Url.replace('-', '+').replace('_', '/')
-		return JSON.parse(window.atob(base64))
+		if(token == undefined) {
+			$state.go('login')
+		}else{
+			var base64Url = token.split('.')[1]
+			var base64 = base64Url.replace('-', '+').replace('_', '/')
+			return JSON.parse(window.atob(base64))
+		}
 	}
 
 	var login = function(user) {
