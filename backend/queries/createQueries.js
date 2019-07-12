@@ -78,7 +78,7 @@ var getAllPlayers = function(sport){
 }
 
 var getAllReferees= function(refereeName){
-	return User.find({firstName: refereeName, function: 'referee'}).lean()
+	return User.find({firstName: refereeName, function: 'referee', isDeleted:false}).lean()
 }
 
 var getCompetitionInfo = function(competitionId){
@@ -130,11 +130,17 @@ var findCompetitions=function(){
 }
 
 var getAllReferee=function(){
-	return User.find({function:"referee"}).lean()
+	return User.find({function:"referee", isDeleted:false}).lean()
 }
 
 var updatePlayer = function(playerId, club){
 	return User.findByIdAndUpdate(playerId, {$set : { club : club }},{new:true}).exec()
+}
+
+var editPlayer = function(player){
+
+    return User.findByIdAndUpdate(player.id, {$set : { firstName : player.firstName, secondName : player.secondName }},{new:true}).exec()
+
 }
 
 module.exports = {
@@ -152,5 +158,6 @@ module.exports = {
 	findTeam,
 	findCompetitions,
 	getAllReferee,
-	updatePlayer
+	updatePlayer,
+    editPlayer
 }

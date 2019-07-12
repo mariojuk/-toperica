@@ -1,0 +1,10 @@
+.about-content {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.about-content p {
+    width: 48%;
+}

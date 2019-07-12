@@ -1,5 +1,11 @@
 angular.module('SportApp')
-.controller('stopWatchDemoCtrl', ['$scope', '$http', 'AuthService', '$timeout','toastr', function($scope,$http, AuthService, $timeout, toastr){
+.controller('stopWatchDemoCtrl', ['$scope', '$http', 'AuthService', '$timeout','toastr', '$state' , function($scope,$http, AuthService, $timeout, toastr, $state){
+    $scope.user = AuthService.getCurrentUser(window.localStorage.getItem('sportApp'))
+    $scope.odjava = function(){
+        AuthService.logout()
+        $state.go('login')
+    }
+
     $scope.stopwatches = [{ log: []}]
     $scope.categories=['traka', 'padobran']
     $scope.option = {

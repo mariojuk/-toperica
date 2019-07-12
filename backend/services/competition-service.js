@@ -7,7 +7,12 @@ function todayCompetions(){
 function todayCompetionsResults(competitionId){
     return competionsQueris.getTodayCompetitionsResults(competitionId)
 }
+
+function historyCompetitions(){
+    return competionsQueris.getHistoryCompetitions()
+}
 module.exports = {
     todayCompetions,
-    todayCompetionsResults
+    todayCompetionsResults,
+    historyCompetitions
 }

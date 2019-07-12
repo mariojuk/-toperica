@@ -83,6 +83,7 @@ $scope.show = false
  	
  		$http.post('api/create/team',$scope.team).then(function(response){
  			toastr.success('Uspješno kreiran tim')
+            location.reload();
 		})
  	}
 }])

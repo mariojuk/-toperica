@@ -42,6 +42,22 @@ router
   		
 	})
 
+    .post('/player/edit/:id', auth.ensure, checkIsAdmin, function(req, res, next){
+        console.log(req.body)
+        if(!_.isEmpty(req.body)){
+            if(req.body.firstName != undefined && req.body.secondName != undefined){
+                cq.editPlayer(req.body)
+                    .then(data => res.ok(data))
+                    .catch(err => res.error(err))
+            }else{
+                res.error('input firstName or secondName')
+            }
+        }else{
+            res.error('input firstName and secondName')
+        }
+
+    })
+
 	.post('/team', auth.ensure, checkIsAdmin, function(req, res, next){
 		async.parallel({
 			clubUpdate: function(callback) {

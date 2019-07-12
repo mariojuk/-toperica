@@ -1,5 +1,6 @@
 var CompetitionPlayer = require('../models/CompetitionPlayer')
 var Competition = require('../models/Competition')
+var User = require('../models/User')
 
 var getMyCompetitions = function(refereeId){
 	return Competition.find({isStarted:true}).lean()
@@ -63,8 +64,21 @@ var writeResult = async function(info){
 	}
 }
 
+var deleteReferee = function(refereeId){
+        return User.findByIdAndUpdate(refereeId, {$set : { isDeleted : true }},{new:true}).exec()
+}
+
+
+var editReferee = function(referee){
+
+    return User.findByIdAndUpdate(referee.id, {$set : { firstName : referee.firstName, secondName : referee.secondName ,club : referee.club }},{new:true}).exec()
+
+}
+
 module.exports={
 	getMyCompetitions,
 	getMyPlayersForCompetition,
-	writeResult
+	writeResult,
+    deleteReferee,
+    editReferee
 }

@@ -1,3 +1,30 @@
+html{ height:100%; }
+body{ min-height:100%; padding:0; margin:0; position:relative; }
+footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #c0d0d6;
+}
+.footer-links {
+  width: 50%;
+}
+.copyright {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.footer-links.about {
+  display: flex;
+  flex-direction: column;
+}
+
 .loginContainer {
   display: flex;
   justify-content: flex-end;
@@ -18,6 +45,8 @@
   justify-content: space-between;
 }
 .loginContainer .loginForm .column {
+  display: flex;
+  justify-content: center;
   flex-direction: column;
   margin-right: 10px;
 }
@@ -32,5 +61,106 @@
   cursor: pointer;
   height: 30px;
   width: 150px;
-  margin: 27px 10px 0px 0;
+  margin: 35px 10px 0px 0;
+}
+.rezultatLive {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  align-items: center;
+  margin: 0 auto;
+}
+.clabname {
+  width: 100%;
+  text-align: center;
+}
+
+.description,
+.descriptionAll,
+.allRez{
+  width: 16.66%;
+  text-align: center;
+}
+.descriptionRez {
+  width: 20%;
+  text-align: center;
+}
+.datalist {
+  display: flex;
+  width:83.34%;
+}
+
+.todayLocation {
+  margin: 20px auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #c0d0d6;
+}
+header img {
+  height: 80px;
+  margin: 20px;
+}
+
+.imageslide{
+  min-width:600px;
+  height:400px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  overflow:hidden;
+  position:relative;
+  text-align: center;
+}
+
+.imageslide .slider-content {
+  position: absolute;
+  width:100%;
+  height:400px;
+
+}
+.slideshow {
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  position:relative;
+  width:600px;
+  overflow:hidden;
+  background: #1a1a1a;
+  margin: 0 auto;
+  color: white;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: .3em;
+  margin-top: 30px;
+}
+
+
+.animate-enter,.animate-leave {
+  -webkit-transition:1000ms cubic-bezier(.165,.84,.44,1) all;
+  -moz-transition:1000ms cubic-bezier(.165,.84,.44,1) all;
+  -ms-transition:1000ms cubic-bezier(.165,.84,.44,1) all;
+  -o-transition:1000ms cubic-bezier(.165,.84,.44,1) all;
+  transition:1000ms cubic-bezier(.165,.84,.44,1) all;
+}
+
+.animate-enter {
+  left:100%;
+}
+
+.animate-enter.animate-enter-active {
+  left:0;
+}
+
+.animate-leave {
+  left:0;
+}
+
+.animate-leave.animate-leave-active {
+  margin-left:-100%;
+}
+
+.rezultatContent {
+  display: flex;
+  flex-wrap: wrap;
 }

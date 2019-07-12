@@ -1,0 +1,24 @@
+
+.loginForm,
+.start-competition-description{
+    display: flex;
+    justify-content: center;
+}
+.loginForm .competition-list {
+    display: inline-flex;
+    align-items: center;
+    min-width: 200px;
+}
+.loginForm  td {
+    text-align: center;
+}
+
+.more-competition,
+.generation-competition{
+    display: flex;
+    margin: 20px auto;
+}
+
+table {
+    margin: 20px auto;
+}

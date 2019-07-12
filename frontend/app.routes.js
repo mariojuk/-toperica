@@ -82,6 +82,15 @@ angular.module('appRoutes', ['ui.router'])
               }
             }
         })
-        
+        .state('about-us', {
+            url: "/about-us",
+            templateUrl: "about-us/about-us.html",
+            controller: "about-usController"
+        })
+        .state('history-of-competition', {
+            url: "/history-of-competition",
+            templateUrl: "history-of-competition/history-of-competition.html",
+            controller: "historyOfCompetitionController"
+        })
      
 })

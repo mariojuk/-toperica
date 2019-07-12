@@ -26,4 +26,16 @@ router
 			.catch(err => res.error(err))
 	})
 
+    .post('/edit/:id', auth.ensure, function(req, res, next){
+        refereeQueries.editReferee(req.body)
+            .then(data=>res.ok(data))
+            .catch(err => res.error(err))
+    })
+
+    .delete('/:id', auth.ensure, function(req, res, next){
+        refereeQueries.deleteReferee(req.params.id)
+            .then(data=>res.ok(data))
+            .catch(err => res.error(err))
+    })
+
 module.exports = router

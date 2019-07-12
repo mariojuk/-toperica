@@ -59,7 +59,8 @@ angular.module('SportApp')
  		$scope.competitionId=$scope.selected[0];
  		$http.post("api/create/registrationOnCompetition/" + $scope.competitionId + "/" + $scope.timeId).then (function(response){
 			$scope.registrationOnCompetition=response.data
-      toastr.success('Uspješno prijavljen tim')
+      		toastr.success('Uspješno prijavljen tim')
+            location.reload();
 		})
  	}
 }])

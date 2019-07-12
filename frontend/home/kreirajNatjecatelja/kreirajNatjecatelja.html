@@ -3,24 +3,44 @@
 	<input class="stopWatch-input" id="firstName" type ="text"  ng-model="player.firstName">
 	<p>Unesi Prezime natjecatelja:</p>
 	<input class="stopWatch-input" id="secondName" type ="text"  ng-model="player.secondName">
-  <button type="button" class="stopWatch-btn" ng-click="createPlayer(player)">Kreiraj igrača</button>
+    <button type="button" class="stopWatch-btn" ng-click="createPlayer(player)">Kreiraj igrača</button>
 </form>
 
 <div class="tableContainer">
   <p> Svi kreirani igraci: </p>
   <table>
     <tr>
-      <th>Redni broj</th>
-      <th>Ime natjecatelja</th> 
-      <th>Prezime natjecatelja</th>
+        <th>Redni broj</th>
+        <th>Ime natjecatelja</th>
+        <th>Prezime natjecatelja</th>
     </tr>
     <tr ng-repeat="player in allPlayers" >
-      <td>{{ $index + 1 }}</td>
-      <td>{{ player.firstName }}</td>
-      <td>{{ player.secondName }}</td>
-      <td><i class="fa fa-trash" aria-hidden="true" ng-confirm-click="Jeste li sigurni da želite obrisati natjecatelja?" confirmed-click="deletePlayer(player._id)" style="cursor: pointer;"></i></td>
+        <td>{{ $index + 1 }}</td>
+        <td>{{ player.firstName }}</td>
+        <td>{{ player.secondName }}</td>
+        <td><i class="fa fa-trash" aria-hidden="true" ng-confirm-click="Jeste li sigurni da želite obrisati natjecatelja?" confirmed-click="deletePlayer(player._id)" style="cursor: pointer;"></i></td>
+        <td><i class="fa fa-edit" aria-hidden="true" ng-click="editPlayer(player._id)"></i></td>
     </tr>
   </table>
+
+
+
+    <table ng-show="visible_edit">
+        <tr>
+            <th>Ime natjecatelja</th>
+            <th>Prezime natjecatelja</th>
+            <th style="display: none;">id natjecatelja</th>
+        </tr>
+        <tr>
+            <td><input class="stopWatch-input"  type ="text"  ng-model="player_edit.firstName"></td>
+            <td><input class="stopWatch-input"  type ="text"  ng-model="player_edit.secondName"></td>
+            <td><input style="display: none;" class="stopWatch-input"  type ="text"  ng-model="player_edit.id"></td>
+            <td><button type="button" class="stopWatch-btn" ng-click="saveEditPlayer(player_edit)">Save</button></td>
+            <td><button type="button" class="stopWatch-btn" ng-click="cancelEditPlayer()">Cancel</button></td>
+        </tr>
+    </table>
+
+
 </div>
 		
 

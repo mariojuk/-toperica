@@ -33,10 +33,10 @@ angular.module('SportApp')
 	$scope.generatePlayerInfo=function(){
 		$http.get("api/create/competitionInfo/"+ $scope.selected[0] ).then (function(response){
 			$scope.specificCompetition=response.data.reportedTeams
-			
+
 			$scope.showInfo3 = true
-			
-			
+
+
 		})
 	}
 
@@ -60,11 +60,13 @@ angular.module('SportApp')
   		if(idx > -1){
    			$scope.selectedReferee.splice(idx,1);
    			$scope.allOtherPlayers=[]
+            console.log($scope.allOtherPlayers)
    			$scope.showInfo3 = false
   		}
   		else{
    			$scope.selectedReferee.push(item)
  			$scope.allOtherPlayers=[]
+            console.log($scope.allOtherPlayers)
 		angular.forEach($scope.specificCompetitions, function(data){
         	if(data.refereeForThisTeam.club != club){
         		
@@ -132,5 +134,4 @@ angular.module('SportApp')
   			$window.location.reload()
   		})
   }
-
 }])

@@ -25,6 +25,27 @@
       <td>{{ player.firstName }}</td>
       <td>{{ player.secondName }}</td>
       <td>{{ player.club }}</td>
+        <td><i class="fa fa-trash" aria-hidden="true" ng-confirm-click="Jeste li sigurni da želite obrisati sudca?" confirmed-click="deleteReferee(player._id)" style="cursor: pointer;"></i></td>
+        <td><i class="fa fa-edit" aria-hidden="true" ng-click="editReferee(player)"></i></td>
     </tr>
   </table>
+
+
+    <table ng-show="visible_edit">
+        <tr>
+            <th>Ime sudca</th>
+            <th>Prezime sudca</th>
+            <th style="display: none;">id natjecatelja</th>
+        </tr>
+        <tr>
+            <td><input class="stopWatch-input"  type ="text"  ng-model="referee_edit.firstName"></td>
+            <td><input class="stopWatch-input"  type ="text"  ng-model="referee_edit.secondName"></td>
+            <td><input class="stopWatch-input"  type ="text"  ng-model="referee_edit.club"></td>
+            <td><input style="display: none;" class="stopWatch-input"  type ="text"  ng-model="referee_edit.id"></td>
+            <td><button type="button" class="stopWatch-btn" ng-click="saveEditReferee(referee_edit)">Save</button></td>
+            <td><button type="button" class="stopWatch-btn" ng-click="cancelEditReferee()">Cancel</button></td>
+        </tr>
+    </table>
+
+
 </div>

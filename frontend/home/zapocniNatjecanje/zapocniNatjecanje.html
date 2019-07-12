@@ -1,20 +1,19 @@
+<p class="start-competition-description">Prvo označi samo jedno natjecanje i pritisni više o natjecanju :)</p>
 <form ng-show="showme" class="loginForm" >
-	<p>Prvo označi samo jedno natjecanje i pritisni više o natjecanju :)</p>
 	<table >
 	  <tr>
 	    <th>Redni broj</th>
 	    <th>Ime Natjecanja</th> 
 	  </tr>
 	  <tr ng-repeat="competition in allCompetitions" >
-	    <td>{{ $index + 1 }}</td>
-	    <td>{{competition.competitionName}}<input type="checkbox" name="" class="check" ng-model="selectedTeam" ng-checked="existTeam(competition)" ng-click="toggleSelection(competition)"/></td>
-	   
+		  <td>{{ $index + 1 }}</td>
+		  <td class="competition-list"><p>{{competition.competitionName}}</p><input type="checkbox" name="" class="check" ng-model="selectedTeam" ng-checked="existTeam(competition)" ng-click="toggleSelection(competition)"/></td>
 	  </tr>
 	</table>	
 	
 </form>
 
-<button type="button" class="btn btn-primary" ng-click="generateReferee()">Više o natjecanju </button>
+<button type="button" class="btn btn-primary more-competition" ng-click="generateReferee()">Više o natjecanju </button>
 
 <table ng-show="showInfo">
 	<tr>
@@ -36,7 +35,7 @@
 	</tr>
 </table>
 
-<button ng-show="showInfo" type="button" class="btn btn-warning" ng-click="startCompetition()">Generiraj suce i započni natjecanje</button>
+<button ng-show="showInfo" type="button" class="btn btn-warning generation-competition" ng-click="startCompetition()">Generiraj suce i započni natjecanje</button>
 
 
 
@@ -51,7 +50,7 @@
   <tr ng-repeat="sudci in specificCompetitions" >
     <td>{{ $index + 1 }}</td>
     <td>{{ sudci.refereeForThisTeam.firstName }} {{ sudci.refereeForThisTeam.secondName }}
-	    <input type="checkbox" ng-model='selectedTeam' ng-value='sudci.refereeForThisTeam._id' name="Referee" ng-click="togglePlayersAndReferee(sudci.refereeForThisTeam._id,sudci.refereeForThisTeam.club)"></td>
+	    <input id="checkbox" type="checkbox" ng-model='selectedTeam' ng-value='sudci.refereeForThisTeam._id' name="Referee" ng-click="togglePlayersAndReferee(sudci.refereeForThisTeam._id,sudci.refereeForThisTeam.club)"></td>
     <td>{{ sudci.refereeForThisTeam.club }}</td>
     <td>{{ sudci.teamName }}</td>
   </tr>
@@ -68,5 +67,5 @@
 	    <td>{{player.firstName}} {{player.secondName}}<input type="checkbox" ng-model='selectedPlayer' ng-value='player._id' name="player" ng-click="toggleAll(player._id)"></td> 
 	</tr>
 </table>
-<button ng-show="showInfo3" type="button" class="btn btn-warning" ng-click="dodjeli_sve()">Dodjeli natjecatelje sudcu</button>
-<button ng-show="showInfo3" type="button" class="btn btn-warning" ng-click="zapocni_natjecanje()">Započni natjecanje</button>
+<button ng-show="showInfo3" type="button" class="btn btn-warning generation-competition" ng-click="dodjeli_sve()">Dodjeli natjecatelje sudcu</button>
+<button ng-show="showInfo3" type="button" class="btn btn-warning generation-competition" ng-click="zapocni_natjecanje()">Započni natjecanje</button>

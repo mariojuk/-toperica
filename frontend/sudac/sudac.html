@@ -1,4 +1,7 @@
 <div ng-app="stopWatchApp" ng-controller="stopWatchDemoCtrl" class="stopWatchContainer">
+    <a ng-click="odjava()">Odjavi se</a>
+
+
     <select ng-init="selectedCategory = categories[0]"  ng-model="selectedCategory" ng-options="c for c in categories" ng-change="checkCategoryAndGenerateTable(selectedCategory)"></select> 
     <table >
     <tr>
