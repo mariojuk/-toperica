@@ -1,4 +1,4 @@
-angular.module('SportApp').directive('ngConfirmClick', [
+angular.module('SportApp').directive('ngConfirmClick', [  
     function(){
         return {
             link: function (scope, element, attr) {

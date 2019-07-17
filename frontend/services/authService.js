@@ -14,7 +14,7 @@ angular.module('SportApp').service('AuthService', ['$http','$state', 'userServic
 	}
 
 	function storeUserCredentials(token) {
-		window.localStorage.setItem(LOCAL_TOKEN_KEY, token)
+		window.localStorage.setItem(LOCAL_TOKEN_KEY, token) //postavlja u browseru local storage taj token
 		useCredentials(token)
 	}
 
@@ -24,7 +24,7 @@ angular.module('SportApp').service('AuthService', ['$http','$state', 'userServic
 
 		var currentUser = parseJwt(token)
 		userService.setUser(currentUser)
-		$http.defaults.headers.common.Authorization = authToken
+		$http.defaults.headers.common.Authorization = authToken //da bi znali jesmo prijavljeni ili nismo na backendu
 	}
 
 	function destroyUserCredentials() {
@@ -40,10 +40,10 @@ angular.module('SportApp').service('AuthService', ['$http','$state', 'userServic
 		return currentUser
 	}
 
-	function parseJwt (token) {
+	function parseJwt (token) { // uzima token
 		if(token == undefined) {
 			$state.go('login')
-		}else{
+		}else{ //stavar usera i pristupa
 			var base64Url = token.split('.')[1]
 			var base64 = base64Url.replace('-', '+').replace('_', '/')
 			return JSON.parse(window.atob(base64))
@@ -51,7 +51,7 @@ angular.module('SportApp').service('AuthService', ['$http','$state', 'userServic
 	}
 
 	var login = function(user) {
-		return $http.post('api/login/authenticate', user).then(function(result) {
+		return $http.post('api/login/authenticate', user).then(function(result) { //imamo token sucess i admin je nije
 			storeUserCredentials(result.data.token)
 			return result
 		})

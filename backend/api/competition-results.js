@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const competitionService = require('../services/competition-service')
+const competitionService = require('../services/competition-service')  //definiramo servis
 const Team = require('../models/Team')
 const _ = require('lodash')
 

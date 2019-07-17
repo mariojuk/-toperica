@@ -9,7 +9,8 @@ angular.module('SportApp')
 		})
 	}
 
-		$http.get('api/create/findCompetitions').then(function(response){
-			$scope.findCompetitions = response.data
-		})
+	$http.get('api/create/findCompetitions').then(function(response){
+		$scope.findCompetitions = response.data
+		console.log(response.data)
+	})
 }])

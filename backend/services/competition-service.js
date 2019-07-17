@@ -1,4 +1,4 @@
-const competionsQueris = require('../queries/competition-queris')
+const competionsQueris = require('../queries/competition-queris')  //poziva query
 
 function todayCompetions(){
     return competionsQueris.getTodayCompetitions()

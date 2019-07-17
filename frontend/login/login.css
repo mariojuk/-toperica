@@ -1,44 +1,32 @@
-html{ height:100%; }
-body{ min-height:100%; padding:0; margin:0; position:relative; }
-footer {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 20px;
-  position: absolute;
-  bottom: 0;
+html, body {
+  height: 100%;
   width: 100%;
-  background-color: #c0d0d6;
-}
-.footer-links {
-  width: 50%;
-}
-.copyright {
-  justify-content: center;
-  display: flex;
-  width: 100%;
-  margin-top: 10px;
+  padding: 0;
+  margin: 0;
 }
 
-.footer-links.about {
+body {
   display: flex;
   flex-direction: column;
+}
+h3 {
+  text-align: center;
+}
+
+header {
+  background-color: #c0d0d6;
+}
+header img {
+  height: 80px;
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
 }
 
 .loginContainer {
   display: flex;
   justify-content: flex-end;
-}
-@media only screen and (max-width: 700px) {
-  .loginContainer  {
-    display: flex;
-    justify-content:center;
-  }
-  .loginForm{
-    display: flex;
-    flex-direction: column;
-  }
-
 }
 .loginContainer .loginForm {
   display: flex;
@@ -63,52 +51,11 @@ footer {
   width: 150px;
   margin: 35px 10px 0px 0;
 }
-.rezultatLive {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 80%;
-  align-items: center;
-  margin: 0 auto;
-}
-.clabname {
-  width: 100%;
-  text-align: center;
-}
 
-.description,
-.descriptionAll,
-.allRez{
-  width: 16.66%;
-  text-align: center;
-}
-.descriptionRez {
-  width: 20%;
-  text-align: center;
-}
-.datalist {
-  display: flex;
-  width:83.34%;
-}
 
-.todayLocation {
-  margin: 20px auto;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  background-color: #c0d0d6;
-}
-header img {
-  height: 80px;
-  margin: 20px;
-}
-
+/*slider*/
 .imageslide{
-  min-width:600px;
-  height:400px;
-  margin: 0 auto;
+  margin: 20px auto 0;
   margin-bottom: 20px;
   overflow:hidden;
   position:relative;
@@ -118,7 +65,7 @@ header img {
 .imageslide .slider-content {
   position: absolute;
   width:100%;
-  height:400px;
+
 
 }
 .slideshow {
@@ -160,7 +107,126 @@ header img {
   margin-left:-100%;
 }
 
+.rezultatLive {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
 .rezultatContent {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
+  margin: 10px 0;
+  border: solid 1px;
+}
+.clabname {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid;
+}
+.description,
+.descriptionAll,
+.allRez{
+  width: 16.66%;
+  text-align: center;
+}
+.clabname,
+.descriptionAll {
+  border-bottom: 1px solid;
+}
+.description,
+.descriptionRez{
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+.descriptionRez {
+  width: 20%;
+  text-align: center;
+}
+
+.allRez {
+  font-size: 18px;
+  font-weight: 800;
+
+}
+.datalist {
+  display: flex;
+  width:83.34%;
+}
+
+.todayLocation {
+  margin: 20px auto;
+}
+
+
+footer {
+  padding: 20px;
+  background-color: #c0d0d6;
+}
+.footer-links.about {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.copyright {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+}
+
+
+
+
+@media only screen and (max-width: 767px) {
+  .loginContainer  {
+    display: flex;
+    justify-content:center;
+    margin: 10px;
+  }
+  .loginForm{
+    display: flex;
+    flex-direction: column;
+  }
+  header img {
+    margin: auto;
+  }
+  .imageslide,
+  .slider-content img{
+    height: 130px;
+  }
+  .slider-content.faust img{
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .rezultatLive {
+    width: 80%;
+  }
+  header img {
+    margin: 20px;
+  }
+  .imageslide  {
+    min-width: 600px;
+    height:300px;
+  }
+  .slider-content{
+    height:300px;
+  }
+  .footer-content {
+    justify-content: flex-end;
+  }
+  .footer-links {
+    width: 50%;
+  }
 }

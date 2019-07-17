@@ -2,8 +2,8 @@ var express = require('express')
 var router = express.Router()
 var jwt = require("jwt-simple")
 var User = require('../models/User')
-
-router.post('/authenticate', function(req, res, next) {
+//sve rute u api
+router.post('/authenticate', function(req, res, next) { //trazi usera
 	User.findOne({
 		username: req.body.username
 	}).select('_id username password roles').exec(function(err,user){
@@ -14,12 +14,12 @@ router.post('/authenticate', function(req, res, next) {
 		} else {
 			if(user.password.toString() == req.body.password.toString()){
 				user = user.toObject()
-				delete user.password
-				var token = jwt.encode(user, 'TopSecret')
+				delete user.password //radi sigurnosti brisemo iz objekta
+				var token = jwt.encode(user, 'TopSecret') //stvaramo localstorage po toj kljucnoj rijeci
 				if(user.roles.toString() == 'admin'){
-					res.json({ success: true, token: 'JWT ' + token , username: user.username, isAdmin: true })
+					res.json({ success: true, token: 'JWT ' + token , username: user.username, isAdmin: true }) //vraca kriptirani localstorage admin
 				}else{
-					res.json({ success: true, token: 'JWT ' + token , username: user.username, isAdmin: false })
+					res.json({ success: true, token: 'JWT ' + token , username: user.username, isAdmin: false }) //vraca kriptirani localstorage sudac
 				}
 				
 			}else{

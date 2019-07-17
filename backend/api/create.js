@@ -10,9 +10,9 @@ var checkIsAdmin = function(req, res, next){
 	if(roles == 'admin'){next()}
 	else{res.status(400).json({err: 'You dont have permission '})}
 }
-
+//req zahtjev za objektom ili parametrom poslanim sa frontenda,  res vracamo odgovor na frontend
 router
-	.post('/referee', auth.ensure, checkIsAdmin, function(req, res, next){
+	.post('/referee', auth.ensure, checkIsAdmin, function(req, res, next){   //auth.ensure"-midlever u nodejs", checkIsAdmin-"midlever u nodejs", mora biti prijavljen i mora biti admin
 		if(!_.isEmpty(req.body)){
 			if(req.body.firstName != undefined && req.body.secondName != undefined && req.body.club != undefined && req.body.password != undefined){
 				cq.createReferee(req.body)
@@ -29,7 +29,7 @@ router
 	.post('/player', auth.ensure, checkIsAdmin, function(req, res, next){
 		
 		if(!_.isEmpty(req.body)){
-			if(req.body.firstName != undefined && req.body.secondName != undefined){
+			if(req.body.firstName != undefined && req.body.secondName != undefined && req.body.team != undefined){
 				cq.createPlayer(req.body)
 	  			.then(data => res.ok(data))
 				.catch(err => res.error(err))
@@ -45,7 +45,7 @@ router
     .post('/player/edit/:id', auth.ensure, checkIsAdmin, function(req, res, next){
         console.log(req.body)
         if(!_.isEmpty(req.body)){
-            if(req.body.firstName != undefined && req.body.secondName != undefined){
+            if(req.body.firstName != undefined && req.body.secondName != undefined && req.body.team != undefined){
                 cq.editPlayer(req.body)
                     .then(data => res.ok(data))
                     .catch(err => res.error(err))
@@ -117,7 +117,7 @@ router
 		
 	})
 
-	.get('/findCompetitions', auth.ensure, function(req, res, next){
+	.get('/findCompetitions', function(req, res, next){
 		cq.findCompetitions()
 			.then(data => res.ok(data))
 			.catch(err => res.error(err))

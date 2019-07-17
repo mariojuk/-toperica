@@ -15,13 +15,13 @@ angular.module('SportApp')
 
 		$http.get('api/create/players/').then(function(response){
 			$scope.allPlayers = response.data
-
 		})
 		
 	}	
 
 	$http.get('api/create/players/').then(function(response){
 		$scope.allPlayers = response.data
+        console.log(response)
 	})
 
 	$scope.deletePlayer=function(playerId){
@@ -30,10 +30,13 @@ angular.module('SportApp')
 		})
 	}
 
-
-    $scope.editPlayer=function(player_id){
+    $scope.editPlayer=function(player_edit){
+		console.log(player_edit)
         $scope.visible_edit = true
-        $scope.player_edit.id=player_id
+        $scope.player_edit.id=player_edit._id
+        $scope.player_edit.firstName =player_edit.firstName
+        $scope.player_edit.secondName =player_edit.secondName
+        $scope.player_edit.team =player_edit.team
     }
 
     $scope.cancelEditPlayer=function(){

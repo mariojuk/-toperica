@@ -10,7 +10,7 @@ var CompetitionPlayerSchema = new Schema({
 	track3: { type: Object, default: { result:'/' }},
 	parachute1: {type: Object, default: { result:'/' }},
 	parachute2: {type: Object, default: { result:'/' }},
-	parachute3: {type: Object, default: { result:'/' }}
+	parachute3: {type: Object, default: { result:'/' }},
 },{ timestamps: true })
 
 module.exports = mongoose.model('CompetitionPlayer', CompetitionPlayerSchema)

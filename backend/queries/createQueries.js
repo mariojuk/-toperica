@@ -3,7 +3,7 @@ var User = require('../models/User')
 var Team = require('../models/Team')
 var moment = require('moment')
 
-var competitionpopulate = [
+var competitionpopulate = [  // radimo dohvat podataka preko id
 	{	path: 'reportedTeams', select: 'teamName players refereeForThisTeam',
     	populate: { path: 'players', select: 'firstName secondName club' }
   	}
@@ -54,6 +54,7 @@ var createPlayer = function(player){
 	var player = new User({
 		firstName: player.firstName,
 		secondName: player.secondName,
+        team :player.team,
 		function: 'player'
 	})
 
@@ -85,7 +86,7 @@ var getCompetitionInfo = function(competitionId){
 	return Competition.findById(competitionId)
 		.populate(competitionpopulate)
 		.populate(competitionpopulateSecond)
-		.lean()
+		.lean() //pretvori rezultat u objekt
 }
 
 var getTeamInfo = function(teamId){
@@ -95,8 +96,8 @@ var getTeamInfo = function(teamId){
 }
 
 var regOnCompetition = function(competitionId, teamId){
-	return Competition.findByIdAndUpdate(competitionId, {$addToSet: {reportedTeams: teamId}}, {new:true}).then(function(competition){
-		return Team.findByIdAndUpdate(teamId, {$addToSet: {registeredCompetition: competitionId}},{new:true})
+	return Competition.findByIdAndUpdate(competitionId, {$addToSet: {reportedTeams: teamId}}, {new:true}).then(function(competition){ //$addToSet neda da se ugura isti tim na isto natjecanje
+		return Team.findByIdAndUpdate(teamId, {$addToSet: {registeredCompetition: competitionId}},{new:true}) // uguramo sva natjecanja na koje je tim nastupa
 	})
 }
 
@@ -139,7 +140,7 @@ var updatePlayer = function(playerId, club){
 
 var editPlayer = function(player){
 
-    return User.findByIdAndUpdate(player.id, {$set : { firstName : player.firstName, secondName : player.secondName }},{new:true}).exec()
+    return User.findByIdAndUpdate(player.id, {$set : { firstName : player.firstName, secondName : player.secondName, team : player.team }},{new:true}).exec()
 
 }
 

@@ -1,20 +1,21 @@
 <header>
-    <a href="/home"><img src="../img/logo.jpg"></a>
-    <div class="loginContainer">
-
-        <form class="loginForm">
-            <div class="column">
-                <p>USERNAME</p>
-                <input id="username" type ="text"  ng-model="loginModel.username">
-            </div>
-            <div class="column">
-                <p>PASSWORD</p>
-                <input id="password" type ="password"  ng-model="loginModel.password">
-            </div>
-            <div class="column">
-                <button type="button" class="btn" ng-click="login(loginModel)">LOGIN</button>
-            </div>
-        </form>
+    <div class="header-content">
+    <a href="/home"><img src="../img/logo.svg"></a>
+        <div class="loginContainer">
+            <form class="loginForm">
+                <div class="column">
+                    <p>USERNAME</p>
+                    <input id="username" type ="text"  ng-model="loginModel.username">
+                </div>
+                <div class="column">
+                    <p>PASSWORD</p>
+                    <input id="password" type ="password"  ng-model="loginModel.password">
+                </div>
+                <div class="column">
+                    <button type="button" class="btn" ng-click="login(loginModel)">LOGIN</button>
+                </div>
+            </form>
+        </div>
     </div>
 </header>
 

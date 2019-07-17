@@ -48,11 +48,15 @@
     <th>Tim sudca</th>
   </tr>
   <tr ng-repeat="sudci in specificCompetitions" >
-    <td>{{ $index + 1 }}</td>
-    <td>{{ sudci.refereeForThisTeam.firstName }} {{ sudci.refereeForThisTeam.secondName }}
-	    <input id="checkbox" type="checkbox" ng-model='selectedTeam' ng-value='sudci.refereeForThisTeam._id' name="Referee" ng-click="togglePlayersAndReferee(sudci.refereeForThisTeam._id,sudci.refereeForThisTeam.club)"></td>
-    <td>{{ sudci.refereeForThisTeam.club }}</td>
-    <td>{{ sudci.teamName }}</td>
+    	<td>{{ $index + 1 }}</td>
+	  	<td class="input-cnt">
+		  <div>{{ sudci.refereeForThisTeam.firstName }} {{ sudci.refereeForThisTeam.secondName }}</div>
+		  <div class="input-content">
+			  <input id="checkbox" type="checkbox" ng-model='selectedTeam' ng-value='sudci.refereeForThisTeam._id' name="Referee" ng-click="togglePlayersAndReferee(sudci.refereeForThisTeam._id,sudci.refereeForThisTeam.club)">
+		  </div>
+	  	</td>
+	  	<td>{{ sudci.refereeForThisTeam.club }}</td>
+    	<td>{{ sudci.teamName }}</td>
   </tr>
 </table>
 
@@ -64,7 +68,12 @@
 	</tr>
 	<tr ng-repeat="player in allOtherPlayers" >
 		<td>{{ $index + 1 }}</td>
-	    <td>{{player.firstName}} {{player.secondName}}<input type="checkbox" ng-model='selectedPlayer' ng-value='player._id' name="player" ng-click="toggleAll(player._id)"></td> 
+	    <td class="input-cnt">
+			<div> {{player.firstName}} {{player.secondName}}</div>
+			<div class="input-content">
+				<input type="checkbox" ng-model='selectedPlayer' ng-value='player._id' name="player" ng-click="toggleAll(player._id)">
+			</div>
+		</td>
 	</tr>
 </table>
 <button ng-show="showInfo3" type="button" class="btn btn-warning generation-competition" ng-click="dodjeli_sve()">Dodjeli natjecatelje sudcu</button>

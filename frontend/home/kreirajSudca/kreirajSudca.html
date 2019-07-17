@@ -31,21 +31,29 @@
   </table>
 
 
-    <table ng-show="visible_edit">
-        <tr>
-            <th>Ime sudca</th>
-            <th>Prezime sudca</th>
-            <th style="display: none;">id natjecatelja</th>
-        </tr>
-        <tr>
-            <td><input class="stopWatch-input"  type ="text"  ng-model="referee_edit.firstName"></td>
-            <td><input class="stopWatch-input"  type ="text"  ng-model="referee_edit.secondName"></td>
-            <td><input class="stopWatch-input"  type ="text"  ng-model="referee_edit.club"></td>
-            <td><input style="display: none;" class="stopWatch-input"  type ="text"  ng-model="referee_edit.id"></td>
-            <td><button type="button" class="stopWatch-btn" ng-click="saveEditReferee(referee_edit)">Save</button></td>
-            <td><button type="button" class="stopWatch-btn" ng-click="cancelEditReferee()">Cancel</button></td>
-        </tr>
-    </table>
+    <div class="edit-container" ng-show="visible_edit">
+        <div class="edit-column">
+            <div>Ime sudca</div>
+            <input class="stopWatch-input"  type ="text"  ng-model="referee_edit.firstName">
+        </div>
+        <div class="edit-column">
+            <div>Prezime sudca</div>
+            <input class="stopWatch-input"  type ="text"  ng-model="referee_edit.secondName">
+        </div>
+        <div class="edit-column">
+            <div>Klub sudca</div>
+            <input class="stopWatch-input"  type ="text"  ng-model="referee_edit.club">
+        </div>
+        <div class="edit-column">
+            <div style="display: none;">id natjecatelja</div>
+            <div style="display: none;"><input type ="text"  ng-model="referee_edit.id"></div>
+        </div>
+
+        <div class="edit-btn">
+            <button type="button" class="stopWatch-btn" ng-click="saveEditReferee(referee_edit)">Save</button>
+            <button type="button" class="stopWatch-btn" ng-click="cancelEditReferee()">Cancel</button>
+        </div>
+    </div>
 
 
 </div>

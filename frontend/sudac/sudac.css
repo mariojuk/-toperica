@@ -3,10 +3,51 @@
 	flex-direction: column;
 	justify-content: center;
 }
-.stopWatchContainer select{
+.stopWatchContainer .btn {
+	margin: 0 !important;
+}
+
+select {
+	background: white url('../img/select-bg.svg') no-repeat 100% 45%;
 	width: 150px;
 	margin: 20px auto;
+	padding-left: 10px;
 }
+select::-ms-expand {
+	display: none;
+}
+select {
+	 -webkit-appearance: none;
+	 -moz-appearance: none;
+	 text-indent: 1px;
+	 text-overflow: '';
+ }
+input[type="checkbox"] {
+	margin-right: 20px;
+	-webkit-appearance: none;
+	outline: none;
+	width: 20px;
+	height: 20px;
+	box-shadow: none!important;
+}
+
+input[type="checkbox"]::before {
+	 margin-bottom: 2px;
+	 content: '';
+	 width: 16px;
+	 height: 16px;
+	 border: 2px solid #496374;
+	 background: #f3f4ee;
+	 display: inline-block;
+	 vertical-align: bottom;
+ }
+input[type="checkbox"]:checked::before{
+	background: white url(../img/checkmark2.png) center/10px no-repeat;
+}
+input[type="checkbox"]:focus {
+	outline: none;
+}
+
 .stopWatchContainer .counterContainer .stopWatch {
 	height: 150px;
 	width: 150px;
@@ -21,6 +62,11 @@
 .stopWatchContainer .counterContainer, .buttonContainer{
 	display: flex;
 	justify-content: center;
+}
+
+.input-content {
+	display: flex;
+	align-items: center;
 }
 .stopWatchContainer .buttonContainer button{
 	margin-right: 10px;

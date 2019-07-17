@@ -19,6 +19,7 @@ var UserSchema = new Schema({
 	},
 	sport: String,
 	club: String,
+    team: String,
 	isDeleted: {type: Boolean, default:false},
 },{ timestamps: true })
 

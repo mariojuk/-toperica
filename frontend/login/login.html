@@ -1,73 +1,100 @@
-<div class="loginBodyClass">
-	<header>
-		<img src="../img/logo.jpg">
-		<div class="loginContainer">
 
-			<form class="loginForm">
-				<div class="column">
-					<p>USERNAME</p>
-					<input id="username" type ="text"  ng-model="loginModel.username">
-				</div>
-				<div class="column">
-					<p>PASSWORD</p>
-					<input id="password" type ="password"  ng-model="loginModel.password">
-				</div>
-				<div class="column">
-					<button type="button" class="btn" ng-click="login(loginModel)">LOGIN</button>
-				</div>
-			</form>
+	<header>
+		<div class="header-content">
+			<img src="../img/logo.svg">
+			<div class="loginContainer">
+
+				<form class="loginForm">
+					<div class="column">
+						<p>USERNAME</p>
+						<input id="username" type ="text"  ng-model="loginModel.username">
+					</div>
+					<div class="column">
+						<p>PASSWORD</p>
+						<input id="password" type ="password"  ng-model="loginModel.password">
+					</div>
+					<div class="column">
+						<button type="button" class="btn" ng-click="login(loginModel)">LOGIN</button>
+					</div>
+				</form>
+			</div>
 		</div>
 	</header>
-    <div ng-controller="loginController" class="imageslide" ng-switch='slideshow' ng-animate="'animate'">
-        <div class="slider-content" ng-switch-when="1">
-            <img src="../img/aadz_zadar_logo.gif">
-        </div>
+	<main>
+		<div ng-controller="loginController" class="imageslide" ng-switch='slideshow' ng-animate="'animate'">
 
-        <div class="slider-content" ng-switch-when="2">
-            <img src="../img/fanix.jpg">
-        </div>
-        <div class="slider-content" ng-switch-when="3">
-           <img src="../img/faust.png">
-        </div>
-    </div>
+			<div class="slider-content" ng-switch-when="1">
+				<img src="../img/aadz_zadar_logo.gif">
+			</div>
 
+			<div class="slider-content" ng-switch-when="2">
+				<img src="../img/fanix.jpg">
+			</div>
+			<div class="slider-content faust" ng-switch-when="3">
+				<img src="../img/faust.png">
+			</div>
+		</div>
 
+		<div ng-show="startDescription" class="bigTableContainer">
+			<table>
+				<tr>
+					<th>Redni broj</th>
+					<th>Ime natjecanja</th>
+					<th>Početak natjecanja</th>
+					<th>Lokacija natjecanja</th>
+					<th>Opis natjecanja</th>
+					<th>Glavni sudac/sutkinja</th>
+				</tr>
+				<tr ng-repeat="player in findCompetitions" >
+					<td>{{ $index + 1 }}</td>
+					<td>{{ player.competitionName }}</td>
+					<td>{{ player.competitionStart }}</td>
+					<td>{{ player.competitionLocation }}</td>
+					<td>{{ player.description }}</td>
+					<td>{{ player.chiefReferee }}</td>
+				</tr>
+			</table>
+		</div>
 
-	<table class="todayLocation">
-		<tr>
-			<th>Ime natjecanja</th>
-			<th>Ime glavnog sudca</th>
-			<th>Lokacija</th>
-			<th>Datum početka natjecanja</th>
-		</tr>
-		<tr ng-repeat="natjecanje in todayComepetitions" >
-			<td>{{ natjecanje.competitionName }}</td>
-			<td>{{ natjecanje.chiefReferee }}</td>
-			<td>{{ natjecanje.competitionLocation }}</td>
-			<td>{{ natjecanje.competitionStart }}</td>
-		</tr>
-	</table>
+		<table ng-show="todaysLocation" class="todayLocation">
+			<tr>
+				<th>Ime natjecanja</th>
+				<th>Ime glavnog sudca</th>
+				<th>Lokacija</th>
+				<th>Datum početka natjecanja</th>
+			</tr>
+			<tr ng-repeat="natjecanje in todayComepetitions" >
+				<td>{{ natjecanje.competitionName }}</td>
+				<td>{{ natjecanje.chiefReferee }}</td>
+				<td>{{ natjecanje.competitionLocation }}</td>
+				<td>{{ natjecanje.competitionStart }}</td>
+			</tr>
+		</table>
 
-	<br>
-
-	<div ng-bind-html="traka"></div>
-	<div ng-bind-html="padobran"></div>
+		<br>
+		<h3 ng-show="rezDescription">Rezultati trake</h3>
+		<div ng-bind-html="traka"></div>
+		<h3 ng-show="rezDescription">Rezultati padobrana</h3>
+		<div ng-bind-html="padobran"></div>
+	</main>
 
 	<footer>
-		<div class="footer-links">
-			<p>Zagreb, Dalmatinska 12</p>
-			<p>tel: <a href="tel:01/4848-758"> 01/4848-758</a> </p>
-			<p>faks:<a href="fax:01/4846-979">01/4846-979</a></p>
-			<p>e-pošta:<a href = "mailto:hars.kresimir@gmail.com">hars.kresimir@gmail.com</a> </p>
-			<p>Predsjednik: BOGOMIR HREN (<a href = "mailto:bogomir.hren@zg.htnet.hr">bogomir.hren@zg.htnet.hr</a>)</p>
-			<p>Tajnica: IVANA MIŠKOVIĆ (<a href = "mailto:ivana.miskovic03@gmail.com">ivana.miskovic03@gmail.com</a>)</p>
-		</div>
-		<div class="footer-links about">
-			<a href="/about-us">O nama</a>
-			<a href="/history-of-competition">Povijest natjecanja</a>
-		</div>
-		<div class="copyright">
-			&copy; 2019
+		<div class="footer-content">
+			<div class="footer-links">
+				<p>Zagreb, Dalmatinska 12</p>
+				<p>tel: <a href="tel:01/4848-758"> 01/4848-758</a> </p>
+				<p>faks:<a href="fax:01/4846-979">01/4846-979</a></p>
+				<p>e-pošta:<a href = "mailto:hars.kresimir@gmail.com">hars.kresimir@gmail.com</a> </p>
+				<p>Predsjednik: BOGOMIR HREN (<a href = "mailto:bogomir.hren@zg.htnet.hr">bogomir.hren@zg.htnet.hr</a>)</p>
+				<p>Tajnica: IVANA MIŠKOVIĆ (<a href = "mailto:ivana.miskovic03@gmail.com">ivana.miskovic03@gmail.com</a>)</p>
+			</div>
+			<div class="footer-links about">
+				<a href="/about-us">O nama</a>
+				<a href="/history-of-competition">Povijest natjecanja</a>
+			</div>
 		</div>
 	</footer>
-</div>
+	<div class="copyright">
+		&copy; 2019
+	</div>
+

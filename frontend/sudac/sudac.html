@@ -1,8 +1,21 @@
 <div ng-app="stopWatchApp" ng-controller="stopWatchDemoCtrl" class="stopWatchContainer">
-    <a ng-click="odjava()">Odjavi se</a>
+
+    <header>
+        <div class="header-content">
+            <img src="../img/logo.svg">
+            <div class="loginContainer">
+
+                <form class="loginForm">
+                    <div class="column">
+                        <button type="button" class="btn" ng-click="odjava()">Odjavi se</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
 
 
-    <select ng-init="selectedCategory = categories[0]"  ng-model="selectedCategory" ng-options="c for c in categories" ng-change="checkCategoryAndGenerateTable(selectedCategory)"></select> 
+    <select class="styled-select slate" ng-init="selectedCategory = categories[0]"  ng-model="selectedCategory" ng-options="c for c in categories" ng-change="checkCategoryAndGenerateTable(selectedCategory)"></select>
     <table >
     <tr>
       <th>Redni broj</th>
@@ -14,7 +27,7 @@
     </tr>
     <tr ng-repeat="p in players" >
       <td>{{ $index + 1 }}</td>
-      <td><div class="tableField"><p>{{p.player.firstName}} {{p.player.secondName}}</p><input type="checkbox" name="" class="check" ng-model="selectedPlayer" ng-checked="exist(p.player)" ng-click="toggleSelection(p.player)"/></div></td>
+      <td><div class="tableField"><p>{{p.player.firstName}} {{p.player.secondName}}</p><div class="input-content"><input type="checkbox" name=""  ng-model="selectedPlayer" ng-checked="exist(p.player)" ng-click="toggleSelection(p.player)"/></div></div></td>
       <td><p>{{p.player.club}}</p></td>
       <td><div class="tableField"><p>{{ selektiranPadobran ? p.parachute1.result : p.track1.result }}</p></div></td>
       <td><div class="tableField"><p>{{ selektiranPadobran ? p.parachute2.result : p.track2.result }}</p> </div></td>

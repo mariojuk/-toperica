@@ -1,0 +1,25 @@
+.competiton-history-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.competiton-history {
+    background-color: #496374;
+    padding: 20px;
+    margin: 20px;
+}
+.competiton-history > div{
+    color: white;
+}
+
+@media only screen and (min-width: 768px) {
+    .competiton-history-content {
+        margin: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .competiton-history-content {
+        margin: 6px;
+    }
+}

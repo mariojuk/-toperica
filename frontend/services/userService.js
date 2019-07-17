@@ -5,7 +5,7 @@ angular.module('SportApp').service('userService', [ function(){
 		getUser : function(){
 			return currentUser
 		},
-		setUser : function(user){
+		setUser : function(user){ //postavi  user
 			currentUser = user
 		}
 	}

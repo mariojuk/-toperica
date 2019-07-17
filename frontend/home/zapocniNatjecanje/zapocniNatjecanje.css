@@ -19,6 +19,14 @@
     margin: 20px auto;
 }
 
+.input-cnt {
+    display: flex;
+    justify-content: space-between;
+}
+
 table {
     margin: 20px auto;
+}
+.input-content input {
+    margin: 0 !important;
 }
