@@ -2,41 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fa8db44-d416-461a-8275-7c4b2487c384" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/api/authApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/authApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/competition-results.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/competition-results.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/appConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/appConfig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/Competition.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Competition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/CompetitionPlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/CompetitionPlayer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/queries/createQueries.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/queries/createQueries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/authConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/authConfig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/services/competition-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/services/competition-service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/about-us/about-us.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/about-us/about-us.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/about-us/about-us.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/about-us/about-us.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/history-of-competition/history-of-competition.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/history-of-competition/history-of-competition.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/history-of-competition/history-of-competition.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/history-of-competition/history-of-competition.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/history-of-competition/history-of-competitionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/history-of-competition/history-of-competitionController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/home/directives/confirm.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/home/directives/confirm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/home/kreirajNatjecanje/kreirajNatjecanjeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/home/kreirajNatjecanje/kreirajNatjecanjeController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/home/kreirajNatjecatelja/kreirajNatjecatelja.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/home/kreirajNatjecatelja/kreirajNatjecatelja.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/home/kreirajNatjecatelja/kreirajNatjecatelja.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/home/kreirajNatjecatelja/kreirajNatjecatelja.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/home/kreirajNatjecatelja/kreirajNatjecateljaController.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/home/kreirajNatjecatelja/kreirajNatjecateljaController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/home/kreirajSudca/kreirajSudca.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/home/kreirajSudca/kreirajSudca.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/home/prijavaTima/prijavaTima.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/home/prijavaTima/prijavaTima.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/home/zapocniNatjecanje/zapocniNatjecanje.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/home/zapocniNatjecanje/zapocniNatjecanje.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/home/zapocniNatjecanje/zapocniNatjecanje.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/home/zapocniNatjecanje/zapocniNatjecanje.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/img/logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/login/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/login/loginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login/loginController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/services/authService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/services/authService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/services/userService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/sudac/sudac.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/sudac/sudac.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/sudac/sudac.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/sudac/sudac.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,40 +68,48 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="658374131">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.delete.remote" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="1" />
+          <entry key="js" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="1" />
+          <entry key="JavaScript" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="css" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CSS" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/sudac/sudac.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="87" lean-forward="true" selection-start-line="29" selection-start-column="87" selection-end-line="29" selection-end-column="114" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/home/kreirajNatjecanje/kreirajNatjecanje.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="47" lean-forward="true" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/home/kreirajNatjecatelja/kreirajNatjecatelja.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/home/kreirajSudca/kreirajSudca.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
+            <state relative-caret-position="495">
               <caret line="33" column="30" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="30" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -145,11 +119,38 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/home/kreirajNatjecatelja/kreirajNatjecatelja.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
+            <state relative-caret-position="171">
               <caret line="57" column="1" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/api/authApi.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/api/competition-results.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/about-us/about-us.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -167,7 +168,7 @@
         <entry file="file://$PROJECT_DIR$/frontend/login/login.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="40" />
+              <caret line="7" column="40" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -184,8 +185,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/home/zapocniNatjecanje/zapocniNatjecanje.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="68" column="47" lean-forward="true" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
+            <state relative-caret-position="1020">
+              <caret line="68" column="47" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -279,7 +280,6 @@
         <option value="$PROJECT_DIR$/frontend/sudac/sudac.css" />
         <option value="$PROJECT_DIR$/frontend/login/login.css" />
         <option value="$PROJECT_DIR$/frontend/about-us/about-us.html" />
-        <option value="$PROJECT_DIR$/frontend/about-us/about-us.css" />
         <option value="$PROJECT_DIR$/frontend/history-of-competition/history-of-competition.html" />
         <option value="$PROJECT_DIR$/frontend/home/kreirajNatjecanje/kreirajNatjecanje.html" />
         <option value="$PROJECT_DIR$/frontend/home/prijavaTima/prijavaTima.css" />
@@ -288,6 +288,7 @@
         <option value="$PROJECT_DIR$/frontend/home/kreirajNatjecatelja/kreirajNatjecatelja.html" />
         <option value="$PROJECT_DIR$/frontend/home/kreirajSudca/kreirajSudca.html" />
         <option value="$PROJECT_DIR$/frontend/home/kreirajNatjecatelja/kreirajNatjecatelja.css" />
+        <option value="$PROJECT_DIR$/frontend/about-us/about-us.css" />
       </list>
     </option>
   </component>
@@ -307,7 +308,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="25" />
     <option name="width" value="960" />
     <option name="height" value="1006" />
@@ -317,103 +318,46 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="-toperica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-toperica" type="462c0819:PsiDirectoryNode" />
+              <item name="zavrsni" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zavrsni" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="-toperica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-toperica" type="462c0819:PsiDirectoryNode" />
+              <item name="zavrsni" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zavrsni" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="-toperica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-toperica" type="462c0819:PsiDirectoryNode" />
+              <item name="zavrsni" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zavrsni" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="-toperica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-toperica" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="-toperica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-toperica" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="-toperica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-toperica" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="queries" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="-toperica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-toperica" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="-toperica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-toperica" type="462c0819:PsiDirectoryNode" />
+              <item name="zavrsni" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zavrsni" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="-toperica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-toperica" type="462c0819:PsiDirectoryNode" />
+              <item name="zavrsni" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zavrsni" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="about-us" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="-toperica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-toperica" type="462c0819:PsiDirectoryNode" />
+              <item name="zavrsni" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zavrsni" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="-toperica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-toperica" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="kreirajNatjecatelja" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="-toperica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-toperica" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="kreirajSudca" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="-toperica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-toperica" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="zapocniNatjecanje" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="-toperica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-toperica" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="-toperica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-toperica" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="sudac" type="462c0819:PsiDirectoryNode" />
+              <item name="history-of-competition" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -456,17 +400,18 @@
       <workItem from="1562921886788" duration="12309000" />
       <workItem from="1563014624996" duration="31679000" />
       <workItem from="1563347804188" duration="8220000" />
+      <workItem from="1563358580697" duration="501000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78968000" />
+    <option name="totallyTimeSpent" value="79469000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1920" height="1006" extended-state="6" />
+    <frame x="0" y="25" width="1920" height="1006" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14994664" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15154749" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -482,7 +427,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.25114155" />
+      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.19748859" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -496,13 +441,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/history-of-competition/history-of-competitionController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/login/loginController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -542,13 +480,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="615" selection-start-line="615" selection-end-line="615" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/api/competition-results.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -746,13 +677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/about-us/about-us.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/about-us/about-us.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -767,13 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/home/prijavaTima/prijavaTima.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/sudac/sudac.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -781,24 +698,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/home/zapocniNatjecanje/zapocniNatjecanje.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="68" column="47" lean-forward="true" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/home/zapocniNatjecanje/zapocniNatjecanje.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/home/kreirajNatjecanje/kreirajNatjecanje.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
-          <caret line="27" column="47" lean-forward="true" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/home/kreirajNatjecatelja/kreirajNatjecatelja.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="7" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/home/kreirajSudca/kreirajSudca.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="30" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -812,32 +733,56 @@
     <entry file="file://$PROJECT_DIR$/frontend/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="40" />
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/home/kreirajNatjecatelja/kreirajNatjecatelja.html">
+    <entry file="file://$PROJECT_DIR$/frontend/home/prijavaTima/prijavaTima.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="30" />
+        <state relative-caret-position="105">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/home/kreirajSudca/kreirajSudca.html">
+    <entry file="file://$PROJECT_DIR$/frontend/home/zapocniNatjecanje/zapocniNatjecanje.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="33" column="30" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="30" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="1020">
+          <caret line="68" column="47" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/home/zapocniNatjecanje/zapocniNatjecanje.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/home/kreirajNatjecatelja/kreirajNatjecatelja.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
+        <state relative-caret-position="171">
           <caret line="57" column="1" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/api/authApi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/api/competition-results.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/about-us/about-us.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
         </state>
       </provider>
     </entry>
